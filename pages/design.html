@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyectos · Diseño web</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen bg-gray-950 text-white">
+    <main class="mx-auto max-w-6xl px-6 py-10">
+        <a href="../index.html#Proyectos"
+            class="inline-flex items-center gap-2 text-white/70 hover:text-white transition">
+            ← Volver
+        </a>
+
+        <header class="mt-6 mb-8">
+            <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">Diseño web</h1>
+            <p class="text-white/70 mt-2 max-w-2xl">
+                Proyectos de UI/UX y prototipado en Figma.
+            </p>
+        </header>
+
+        <!-- PROYECTOS -->
+        <section id="Proyectos"
+            class="w-full rounded-3xl flex flex-col gap-6 border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
+            aria-labelledby="projects-title">
+            
+            <!-- Título de sección -->
+            <div class="flex items-center gap-3 mb-8">
+                <img src="../assets/img/3dicons-at-dynamic-color.png" alt="" aria-hidden="true"
+                    class="w-10 h-10 opacity-90 transition-transform duration-300 hover:-rotate-6 hover:scale-105 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]" />
+                <h2 id="projects-title"
+                    class="relative inline-block text-2xl sm:text-3xl font-semibold tracking-tight text-white after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full hover:after:[box-shadow:0_0_8px_rgba(34,211,238,0.6)]">
+                    Proyectos
+                </h2>
+            </div>
+
+            <!-- Card: Plantilla - Portfolio Retro -->
+            <article class="relative cursor-not-allowed pointer-events-none grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm transition">
+
+                <!-- OVERLAY -->
+                <div class="absolute inset-0 z-20 flex items-center justify-center rounded-2xl bg-black/85 backdrop-blur-sm" aria-hidden="true">
+
+                    <!-- EN PROCESO -->
+                    <div class="animate-pulse flex items-center gap-3 rounded-full px-6 py-3 border border-amber-400/40 bg-amber-400/10 text-amber-300 text-sm sm:text-base font-semibold uppercase tracking-widest shadow-[0_0_25px_rgba(251,191,36,0.35)]">
+
+                        <span class="h-2.5 w-2.5 rounded-full bg-amber-300 animate-pulse"></span>
+                        En proceso
+                    </div>
+                </div>
+
+                <!-- PREVIEW -->
+                <div class="lg:col-span-6">
+                    <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+                        <img class="w-full h-80 object-cover" src="../assets/img/capturaPortfolioRetro2.png"
+                            alt="Vista previa del diseño en Figma" loading="lazy" decoding="async" />
+                    </div>
+                </div>
+
+                <!-- CONTENT -->
+                <div class="lg:col-span-6 flex flex-col gap-5">
+
+                    <header>
+                        <h3 class="text-2xl sm:text-3xl font-semibold">
+                            Plantilla - Portfolio Retro
+                        </h3>
+                        <p class="text-white/60 mt-1">
+                            UI / UX · Diseño de interfaz
+                        </p>
+                    </header>
+
+                    <!-- Incluye -->
+                    <div class="flex flex-wrap gap-2" aria-label="Incluye">
+                        <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80">
+                            <span class="h-2 w-2 rounded-full bg-cyan-300"></span>
+                            Design
+                        </span>
+
+                        <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80">
+                            <span class="h-2 w-2 rounded-full bg-violet-300"></span>
+                            Guidelines
+                        </span>
+
+                        <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80">
+                            <span class="h-2 w-2 rounded-full bg-emerald-300"></span>
+                            Mockup
+                        </span>
+                    </div>
+
+                    <p class="text-white/80 leading-relaxed text-sm sm:text-base">
+                        Diseño completo en Figma con estructura de pantallas,
+                        sistema de estilos y componentes reutilizables.
+                        Incluye guidelines (tipografía, colores, espaciados)
+                        y mockups finales listos para implementación.
+                    </p>
+
+                    <!-- Links -->
+                    <div class="flex flex-row flex-wrap gap-3">
+                        <a href="https://www.figma.com/file/" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-2 bg-white/10 border border-white/15 shadow-sm">
+                            <img class="w-5 h-5" src="../assets/img/logoFigma.png" alt="" aria-hidden="true" />
+                            <span class="font-medium">Figma File</span>
+                        </a>
+
+                        <a href="https://www.figma.com/proto/" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-2 bg-sky-500/20 border border-sky-400/25 shadow-sm">
+                            <img class="w-5 h-5" src="../assets/img/logoWeb.png" alt="" aria-hidden="true" />
+                            <span class="font-medium">Prototype</span>
+                        </a>
+                    </div>
+
+                </div>
+            </article>
+
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="w-full mt-10 rounded-3xl border border-white/10 bg-white/0 backdrop-blur-xl shadow-lg"
+        aria-label="Pie de página">
+
+        <div class="mx-auto max-w-6xl px-6 sm:px-10 py-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                <!-- Marca + descripción -->
+                <div class="lg:col-span-7 space-y-4">
+                    <!-- Logo y nombre -->
+                    <div class="flex items-center gap-3">
+                        <img class="w-auto h-10 opacity-95" src="../assets/img/guilleODEVWhite-transparent.png"
+                            alt="Logo GuilleODEV" loading="lazy" decoding="async" />
+                        <div>
+                            <p class="text-white font-semibold leading-none">Guillermo Redondo Camacho</p>
+                            <p class="text-white/60 text-sm">Desarrollador web · Diseño web · UI</p>
+                        </div>
+                    </div>
+
+                    <!-- Texto descriptivo -->
+                    <p class="text-white/70 text-sm leading-relaxed max-w-md">
+                        Portfolio personal donde muestro proyectos reales, mi experiencia y las tecnologías con las que
+                        trabajo.
+                        Si te interesa colaborar o tienes una idea, escríbeme.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-row gap-3 pt-1">
+                        <a href="#Contacto"
+                            class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-3 bg-sky-500/15 hover:bg-sky-500/25 border border-sky-400/25 text-sky-100 transition shadow-sm"
+                            aria-label="Ir a la sección de contacto">
+                            <img class="w-3 h-3" src="../assets/img/logoMailWhite.webp" alt="" aria-hidden="true" />
+                            <span class="font-semibold">Contactar</span>
+                        </a>
+
+                        <a href="../index.html#Proyectos"
+                            class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-3 bg-white/10 hover:bg-white/15 border border-white/15 hover:border-white/25 transition shadow-sm text-white"
+                            aria-label="Ir a la sección de proyectos">
+                            <span class="font-semibold">Ver proyectos</span>
+                            <span class="text-white/70" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Redes sociales -->
+                <div class="lg:col-span-4">
+                    <p class="text-white font-semibold mb-3">Redes</p>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <!-- GitHub -->
+                        <a href="https://github.com/guilleodev" target="_blank" rel="noreferrer"
+                            class="group flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/40 px-4 py-3 hover:bg-white/6 transition"
+                            aria-label="Abrir GitHub de guilleodev en una nueva pestaña">
+                            <div class="flex items-center gap-3">
+                                <img class="w-6 h-6 opacity-90 group-hover:opacity-100"
+                                    src="../assets/img/logoGithubWhite.png" alt="" aria-hidden="true" loading="lazy"
+                                    decoding="async" />
+                                <div>
+                                    <p class="text-white text-sm font-semibold leading-tight">GitHub</p>
+                                    <p class="text-white/55 text-xs">/guilleodev</p>
+                                </div>
+                            </div>
+                            <span class="text-white/50 group-hover:text-white/80 transition" aria-hidden="true">↗</span>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/guillermo-redondo-camacho" target="_blank" rel="noreferrer"
+                            class="group flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/40 px-4 py-3 hover:bg-white/6 transition"
+                            aria-label="Abrir LinkedIn de Guillermo Redondo en una nueva pestaña">
+                            <div class="flex items-center gap-3">
+                                <img class="w-6 h-6 opacity-90 group-hover:opacity-100"
+                                    src="../assets/img/logoLinkedin.PNG" alt="" aria-hidden="true" loading="lazy"
+                                    decoding="async" />
+                                <div>
+                                    <p class="text-white text-sm font-semibold leading-tight">LinkedIn</p>
+                                    <p class="text-white/55 text-xs">Guillermo Redondo</p>
+                                </div>
+                            </div>
+                            <span class="text-white/50 group-hover:text-white/80 transition" aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Línea inferior -->
+            <div
+                class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3 items-center justify-between">
+                <p class="text-xs text-white/50">
+                    © <span id="year"></span> GuilleODEV. Todos los derechos reservados.
+                </p>
+
+                <!-- Enlaces rápidos -->
+                <div class="flex items-center gap-4 text-xs text-white/50">
+                    <a href="../index.html#Proyectos" class="hover:text-white/80 transition">Proyectos</a>
+                    <span class="text-white/20" aria-hidden="true">•</span>
+                    <a href="#main" class="hover:text-white/80 transition">Volver arriba ↑</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <!-- Relleno azul -->
+  <path fill="#22d3ee" d="
+    M6 1 h2 v6 h1 v-3 h2 v4 h1 v-2 h2 v7
+    h-1 v2 h-7 v-1 h-1 v-1 h-1 v-2 h-1 v-3
+    h1 v1 h1 v1 h1 v-9
+  "></path>
+
+  <!-- Contorno (azul más oscuro) -->
+  </svg>

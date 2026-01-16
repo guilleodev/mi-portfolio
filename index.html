@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PortfolioGuilleODEV</title>
+
+    <!-- Tailwind (Browser build v4) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+</head>
+
+<body class="flex flex-col gap-6 bg-gray-950 font-mono">
+
+    <!-- Fondo -->
+    <div class="ambient-bg" aria-hidden="true"></div>
+
+    <header class="relative isolate min-h-screen overflow-hidden perspective-1000">
+
+        <!-- Capa ambiental del header -->
+        <div class="ambient-header border-b border-white/10" aria-hidden="true"></div>
+
+        <!-- Vídeo de fondo del hero -->
+        <video id="heroBg" class="absolute inset-0 -z-10 w-full h-full object-cover"
+            src="assets/vid/videoHeaderCompressed.mp4" autoplay muted loop playsinline preload="auto"
+            aria-hidden="true"></video>
+
+        <!-- Escenario 3D: persona + logos flotando (parallax controlado por JS/CSS) -->
+        <div id="heroStage" class="hero-stage hero-person-3d pointer-events-none absolute -left-5 right-0 mx-auto
+      bottom-[30%] sm:bottom-[30%] md:bottom-0
+      w-[clamp(450px,95vw,1500px)] aspect-1500/900">
+            <div class="hero-person-wrap absolute inset-0">
+                <img src="assets/img/sinfondo.png" alt="Persona" draggable="false" class="hero-person absolute inset-0 w-full h-full object-contain select-none
+          drop-shadow-[0_40px_60px_rgba(0,0,0,0.6)] brightness-105 contrast-105
+          filter-[drop-shadow(0_0_18px_rgba(34,211,238,0.25))] will-change-transform" />
+            </div>
+
+            <!-- Logo flotante mano izquierda -->
+            <a href="#" class="pointer-events-auto absolute hero-hand hero-hand-left group float-soft"
+                aria-label="Logo flotante mano izquierda">
+                <span
+                    class="absolute inset-0 rounded-full bg-cyan-400/30 blur-3xl opacity-70 group-hover:opacity-100 transition"
+                    aria-hidden="true"></span>
+                <img src="assets/img/guilleODEVWhite-transparent.png" alt="Logo GuilleODEV" class="relative w-full h-full object-contain select-none transition duration-300 group-hover:scale-110
+          drop-shadow-[0_0_25px_rgba(34,211,238,0.6)]" />
+            </a>
+
+            <!-- Logo flotante mano derecha -->
+            <a href="#" class="pointer-events-auto absolute hero-hand hero-hand-right group float-soft-slow"
+                aria-label="Logo flotante mano derecha">
+                <span
+                    class="absolute inset-0 rounded-full bg-cyan-400/30 blur-3xl opacity-70 group-hover:opacity-100 transition"
+                    aria-hidden="true"></span>
+                <img src="assets/img/logov2White-transparent.png" alt="Logo (derecha)" class="relative w-full h-full object-contain select-none transition duration-300 group-hover:scale-110
+          drop-shadow-[0_0_25px_rgba(34,211,238,0.6)]" />
+            </a>
+        </div>
+
+        <!-- Overlay -->
+        <div class="relative min-h-screen bg-black/40">
+            <nav class="sticky top-5 z-50 mx-auto max-w-5xl grid grid-cols-3 items-center px-4 sm:px-6 md:px-8 py-3 gap-3 border border-white/20 backdrop-blur-md rounded-full text-white font-mono text-[12px] lg:text-[13px] xl:text-[14px] animate-floatSlowv2"
+                aria-label="Navegación principal">
+
+                <!-- IZQ (texto) -->
+                <ul class="hidden md:flex justify-end gap-x-12 col-start-1">
+                    <li>
+                        <a class="transition hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/70 rounded"
+                            href="#Experiencia">Experiencia</a>
+                    </li>
+                    <li>
+                        <a class="transition hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/70 rounded"
+                            href="#Proyectos">Proyectos</a>
+                    </li>
+                </ul>
+
+                <!-- CENTRO (logo) -->
+                <div class="flex justify-center col-start-2">
+                    <a href="index.html" class="inline-flex" aria-label="Ir al inicio">
+                        <img class="w-44 sm:w-52 md:w-56 xl:w-64 h-auto hover:scale-105 transition"
+                            src="assets/img/guilleODEVWhite-transparent.png" alt="Logo GuilleODEV" />
+                    </a>
+                </div>
+
+                <!-- DER (texto) -->
+                <ul class="hidden md:flex justify-start gap-x-12 col-start-3">
+                    <li>
+                        <a class="transition hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/70 rounded"
+                            href="#Conocimientos">Conocimientos</a>
+                    </li>
+                    <li>
+                        <a class="transition hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/70 rounded"
+                            href="#SobreMi">Sobre mí</a>
+                    </li>
+                </ul>
+
+                <!-- HAMBURGUESA (móvil) -->
+                <div class="md:hidden col-start-3 flex justify-end">
+                    <button id="menuBtn"
+                        class="inline-flex items-center justify-center rounded-full w-11 h-11 border border-white/15 bg-white/5 hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-cyan-300/70"
+                        aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu" type="button">
+                        <!-- icono abrir -->
+                        <svg id="menuIcon" class="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="2.2"
+                                stroke-linecap="round" />
+                        </svg>
+                        <!-- icono cerrar -->
+                        <svg id="closeIcon" class="w-6 h-6 hidden" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M6 6l12 12M18 6l-12 12" stroke="white" stroke-width="2.2" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- PANEL MÓVIL (dropdown) -->
+                <div id="mobileMenu"
+                    class="md:hidden absolute left-1/2 top-full mt-3 w-[92vw] max-w-md -translate-x-1/2 rounded-3xl border border-white/15 bg-black/70 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.55)] p-4 hidden z-50">
+                    <ul class="grid gap-2 text-sm">
+                        <li><a class="block rounded-2xl px-4 py-3 border border-white/10 bg-white/5 hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-cyan-300/70"
+                                href="#Experiencia">Experiencia</a></li>
+                        <li><a class="block rounded-2xl px-4 py-3 border border-white/10 bg-white/5 hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-cyan-300/70"
+                                href="#Proyectos">Proyectos</a></li>
+                        <li><a class="block rounded-2xl px-4 py-3 border border-white/10 bg-white/5 hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-cyan-300/70"
+                                href="#Conocimientos">Conocimientos</a></li>
+                        <li><a class="block rounded-2xl px-4 py-3 border border-white/10 bg-white/5 hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-cyan-300/70"
+                                href="#SobreMi">Sobre mí</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Indicador para bajar al contenido -->
+        <div class="absolute inset-x-0 bottom-5 z-50 flex justify-center">
+            <a href="#main" class="flex flex-col items-center opacity-80 hover:opacity-100 transition"
+                aria-label="Bajar al contenido principal">
+                <svg class="w-14 h-14 animate-bounce" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" stroke="white" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <svg class="w-14 h-14 animate-bounce [animation-delay:150ms]" viewBox="0 0 24 24" fill="none"
+                    aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="main" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 flex flex-col gap-16 text-white">
+        <!-- HERO: presentación + CTAs -->
+        <section class="w-full" aria-labelledby="hero-title" aria-label="Presentación">
+            <div class="w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-2 items-center">
+                    <!-- Columna izquierda: foto + badge disponibilidad -->
+                    <div class="lg:col-span-4 flex flex-col items-center lg:items-start gap-3 pb-4">
+                        <!-- Wrapper para mantener el mismo ancho en foto + badge -->
+                        <div class="w-40 sm:w-52">
+                            <img class="w-full h-40 sm:h-48 rounded-3xl object-cover border border-white/15 shadow-md ring-1 ring-white/10 filter-[drop-shadow(0_0_18px_rgba(34,211,238,0.15))] transition duration-300 hover:scale-[1.02]"
+                                src="assets/img/fotoCV2.png" alt="Foto de perfil de Guille" loading="lazy"
+                                decoding="async" />
+                        </div>
+
+                        <!-- Badge estado -->
+                        <div class="flex justify-center items-center w-40 sm:w-52">
+                            <span
+                                class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-[12px] font-medium border border-emerald-400/20 bg-emerald-400/20 text-emerald-200 tracking-normal hover:bg-emerald-400/60 hover:text-emerald-100 animate-pulse">
+                                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"
+                                    aria-hidden="true"></span>
+                                Disponible para trabajar
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Columna derecha: copy + botones -->
+                    <div class="lg:col-span-8 flex flex-col gap-4">
+                        <h1 id="hero-title" class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
+                            Hey, soy Guille Redondo
+                        </h1>
+
+                        <p class="text-white/80 leading-relaxed text-base sm:text-lg">
+                            Desarrollador Full Stack, con experiencia en
+                            <span class="text-yellow-300 font-semibold">HTML, CSS, Tailwind, JavaScript, PHP y
+                                MySQL</span>.
+                            Actualmente aprendiendo <span class="text-sky-300 font-semibold">React</span> y construyendo
+                            proyectos
+                            reales para fortalecer mis habilidades. Manejo WordPress y diseño UI con Figma para crear
+                            aplicaciones web
+                            completas y funcionales.
+                        </p>
+
+                        <!-- CTAs principales -->
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
+                            <a href="mailto:guillerc18@gmail.com"
+                                class="group inline-flex items-center justify-center gap-3 rounded-xl px-5 py-3 bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/25 hover:border-sky-300/40 shadow-sm transition focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+                                aria-label="Enviar email a Guille">
+                                <img class="w-4 h-4 opacity-90 group-hover:opacity-100"
+                                    src="assets/img/logoMailWhite.webp" alt="" aria-hidden="true" />
+                                <span class="text-sm sm:text-base font-semibold">Contáctame</span>
+                            </a>
+
+                            <div class="relative group">
+                                <a href="https://www.linkedin.com/in/guillermo-redondo-camacho" target="_blank"
+                                    rel="noreferrer"
+                                    class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-3 bg-blue-500/50 hover:bg-blue-500/70 border border-white/15 hover:border-white/25 transition shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-300/40"
+                                    aria-label="Abrir LinkedIn de Guillermo en una nueva pestaña">
+
+                                    <img class="w-5 h-5 opacity-90 group-hover:opacity-100"
+                                        src="assets/img/logoLinkedin.PNG" alt="" aria-hidden="true" />
+                                    <span class="text-sm sm:text-base font-medium">LinkedIn</span>
+                                </a>
+
+                                <!-- Tooltip -->
+                                <div
+                                    class="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-3 opacity-0 scale-95 translate-y-2 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-all duration-300 z-50">
+
+                                    <div
+                                        class="flex items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/90 backdrop-blur-xl px-4 py-3 shadow-xl min-w-40">
+
+                                        <img src="assets/img/fotoLinkedin.png" alt="Perfil LinkedIn de Guille"
+                                            class="w-12 h-12 rounded-full object-cover border border-white/20" />
+
+                                        <div class="text-left">
+                                            <p class="text-sm font-semibold text-white">Guillermo Redondo</p>
+                                            <p class="text-xs text-white/70">LinkedIn</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="relative group">
+                                <a href="https://www.github.com/guilleodev" target="_blank" rel="noreferrer"
+                                    class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-3 bg-black/10 hover:bg-white/15 border border-white/15 hover:border-white/25 transition shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-300/40"
+                                    aria-label="Abrir GitHub de guilleodev en una nueva pestaña">
+
+                                    <img class="w-5 h-5 opacity-90 group-hover:opacity-100"
+                                        src="assets/img/logoGithubWhite.png" alt="" aria-hidden="true" />
+                                    <span class="text-sm sm:text-base font-medium">GitHub</span>
+                                </a>
+
+                                <!-- Tooltip -->
+                                <div
+                                    class="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-3 opacity-0 scale-95 translate-y-2 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-all duration-300 z-50">
+
+                                    <div
+                                        class="flex items-center gap-3 rounded-2xl border border-white/15 bg-slate-950/90 backdrop-blur-xl px-4 py-3 shadow-xl min-w-45">
+
+                                        <img src="assets/img/fotoGitHub.png" alt="Perfil GitHub de Guille"
+                                            class="w-12 h-12 rounded-full object-cover border border-white/20" />
+
+                                        <div class="text-left">
+                                            <p class="text-sm font-semibold text-white">guilleODEV</p>
+                                            <p class="text-xs text-white/70">GitHub</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCIA -->
+        <section id="Experiencia"
+            class="w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
+            aria-labelledby="experience-title">
+            <!-- Título de sección -->
+            <div class="flex items-center gap-3 mb-8">
+                <img src="assets/img/3dicons-travel-dynamic-color.png" alt="" aria-hidden="true"
+                    class="w-10 h-10 opacity-90 transition-transform duration-300 hover:-rotate-6 hover:scale-105 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]" />
+                <h2 id="experience-title"
+                    class="relative inline-block text-2xl sm:text-3xl font-semibold tracking-tight text-white after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full hover:after:[box-shadow:0_0_8px_rgba(34,211,238,0.6)]">
+                    Experiencia
+                </h2>
+            </div>
+
+            <!-- Grid de experiencias -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Card: SEB Creativos -->
+                <article
+                    class="rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-7 shadow-sm hover:bg-white/6 transition">
+                    <header class="flex items-start justify-between gap-4">
+                        <div class="flex items-start gap-4">
+                            <!-- Logo + link empresa -->
+                            <a href="https://sebcreativos.es" class="group" target="_blank" rel="noreferrer"
+                                aria-label="Visitar SEB Creativos">
+                                <div
+                                    class="shrink-0 h-12 w-12 rounded-xl bg-white border border-white/15 flex items-center justify-center overflow-hidden transition group-hover:bg-white/90 group-hover:scale-[1.03] group-hover:[box-shadow:0_0_18px_rgba(34,211,238,0.45)]">
+                                    <img src="assets/img/logoSeb.svg" alt="Logo de SEB Creativos"
+                                        class="h-full w-full object-contain p-2 transition group-hover:scale-105"
+                                        loading="lazy" decoding="async" />
+                                </div>
+                            </a>
+
+                            <div>
+                                <h3 class="text-xl font-semibold">Desarrollador Web</h3>
+
+                                <a href="https://sebcreativos.es" class="relative inline-block group" target="_blank"
+                                    rel="noreferrer">
+                                    <span class="text-white/70 font-medium transition group-hover:text-cyan-300">SEB
+                                        CREATIVOS</span>
+                                    <span
+                                        class="absolute left-0 bottom-0 h-px w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full [box-shadow:0_0_8px_rgba(34,211,238,0.6)]"
+                                        aria-hidden="true"></span>
+                                </a>
+
+                                <p class="text-white/50 text-sm">Agencia de publicidad</p>
+                            </div>
+                        </div>
+
+                        <!-- Tipo -->
+                        <span
+                            class="shrink-0 rounded-full px-3 py-1 text-xs font-medium bg-white/10 border border-white/10 text-white/70">
+                            Agencia
+                        </span>
+                    </header>
+
+                    <ul class="mt-5 space-y-2 text-white/80 text-sm leading-relaxed list-disc pl-5">
+                        <li>Adaptación de diseños desde Figma a entornos web.</li>
+                        <li>Desarrollo, maquetación y mantenimiento de sitios web en WordPress.</li>
+                        <li>Personalización de temas y plugins, integración de funcionalidades.</li>
+                        <li>Soporte técnico y resolución de incidencias para clientes.</li>
+                    </ul>
+                    <!-- Tecnologías -->
+                    <div class="mt-6">
+                        <h4 class="mb-3 text-xs uppercase tracking-wider text-white/50">
+                            Tecnologías utilizadas
+                        </h4>
+
+                        <ul class="flex flex-wrap gap-2">
+                            <!-- WordPress -->
+                            <li
+                                class="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80 backdrop-blur-md hover:bg-white/10 transition">
+                                <img src="assets/img/logoWordpress.png" alt="" class="h-4 w-4" aria-hidden="true" />
+                                WordPress
+                            </li>
+
+                            <!-- Elementor -->
+                            <li
+                                class="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80 backdrop-blur-md hover:bg-white/10 transition">
+                                <img src="assets/img/logoElementor.png" alt="" class="h-4 w-4" aria-hidden="true" />
+                                Elementor
+                            </li>
+
+                            <!-- HTML -->
+                            <li
+                                class="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80 backdrop-blur-md hover:bg-white/10 transition">
+                                <img src="assets/img/html.png" alt="" class="h-4 w-4" aria-hidden="true" />
+                                HTML
+                            </li>
+
+                            <!-- CSS -->
+                            <li
+                                class="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80 backdrop-blur-md hover:bg-white/10 transition">
+                                <img src="assets/img/css.png" alt="" class="h-4 w-4" aria-hidden="true" />
+                                CSS
+                            </li>
+
+                            <!-- Tailwind -->
+                            <li
+                                class="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80 backdrop-blur-md hover:bg-white/10 transition">
+                                <img src="assets/img/logoTailwind.png" alt="" class="h-4 w-5" aria-hidden="true" />
+                                Tailwind
+                            </li>
+
+                            <!-- JavaScript -->
+                            <li
+                                class="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80 backdrop-blur-md hover:bg-white/10 transition">
+                                <img src="assets/img/logoJS.png" alt="" class="h-4 w-4" aria-hidden="true" />
+                                JavaScript
+                            </li>
+
+                            <!-- Figma -->
+                            <li
+                                class="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80 backdrop-blur-md hover:bg-white/10 transition">
+                                <img src="assets/img/logoFigma.png" alt="" class="h-4 w-4" aria-hidden="true" />
+                                Figma
+                            </li>
+
+                            <!-- Notion -->
+                            <li
+                                class="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80 backdrop-blur-md hover:bg-white/10 transition">
+                                <img src="assets/img/notion.png" alt="" class="h-4 w-4" aria-hidden="true" />
+                                Notion
+                            </li>
+                        </ul>
+                    </div>
+
+                </article>
+
+                <!-- Card: ABR -->
+                <article
+                    class="rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-7 shadow-sm hover:bg-white/6 transition">
+                    <header class="flex items-start justify-between gap-4">
+                        <div class="flex items-start gap-4">
+                            <!-- Logo + link empresa -->
+                            <a href="https://angelbenitorodero.es" class="group" target="_blank" rel="noreferrer"
+                                aria-label="Visitar ABR">
+                                <div
+                                    class="shrink-0 h-12 w-12 rounded-xl bg-white border border-white/15 flex items-center justify-center overflow-hidden transition group-hover:bg-white/90 group-hover:scale-[1.03] group-hover:[box-shadow:0_0_18px_rgba(34,211,238,0.45)]">
+                                    <img src="assets/img/logoABR.png" alt="Logo de ABR"
+                                        class="h-full w-full object-contain p-2 transition group-hover:scale-105"
+                                        loading="lazy" decoding="async" />
+                                </div>
+                            </a>
+
+                            <div>
+                                <h3 class="text-xl font-semibold">Community Manager</h3>
+
+                                <a href="https://angelbenitorodero.es" class="relative inline-block group"
+                                    target="_blank" rel="noreferrer">
+                                    <span
+                                        class="text-white/70 font-medium transition group-hover:text-cyan-300">ABR</span>
+                                    <span
+                                        class="absolute left-0 bottom-0 h-px w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full [box-shadow:0_0_8px_rgba(34,211,238,0.6)]"
+                                        aria-hidden="true"></span>
+                                </a>
+
+                                <p class="text-white/50 text-sm">Abogado digital</p>
+                            </div>
+                        </div>
+
+                        <!-- Tipo -->
+                        <span
+                            class="shrink-0 rounded-full px-3 py-1 text-xs font-medium bg-white/10 border border-white/10 text-white/70">
+                            Cliente final
+                        </span>
+                    </header>
+
+                    <ul class="mt-5 space-y-2 text-white/80 text-sm leading-relaxed list-disc pl-5">
+                        <li>Gestión de redes sociales (planificación, publicación y monitorización).</li>
+                        <li>Creación de contenidos atractivos (textos, imágenes y vídeos).</li>
+                        <li>Interacción con la comunidad y atención a usuarios.</li>
+                        <li>Análisis de métricas y elaboración de informes de rendimiento.</li>
+                    </ul>
+
+                    <!-- Tecnologías -->
+                    <div class="mt-6">
+                        <h4 class="mb-3 text-xs uppercase tracking-wider text-white/50">
+                            Tecnologías utilizadas
+                        </h4>
+
+                        <ul class="flex flex-wrap gap-2">
+                            <!-- Photoshop -->
+                            <li
+                                class="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80 backdrop-blur-md hover:bg-white/10 transition">
+                                <img src="assets/img/logoPhotoshop.png" alt="" class="h-4 w-4" aria-hidden="true" />
+                                Photoshop
+                            </li>
+
+                            <!-- Instagram -->
+                            <li
+                                class="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80 backdrop-blur-md hover:bg-white/10 transition">
+                                <img src="assets/img/logoInstagram.png" alt="" class="h-4 w-4" aria-hidden="true" />
+                                Instagram
+                            </li>
+
+                            <!-- Facebook -->
+                            <li
+                                class="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80 backdrop-blur-md hover:bg-white/10 transition">
+                                <img src="assets/img/logoFacebook.png" alt="" class="h-4 w-4" aria-hidden="true" />
+                                Facebook
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Nota -->
+            <div
+                class="mt-8 rounded-2xl border border-white/10 bg-slate-950/30 p-5 sm:p-6 shadow-sm hover:bg-white/6 transition">
+                <div class="flex items-start gap-3">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-cyan-400" aria-hidden="true"></span>
+                    <p class="text-sm text-white/75 leading-relaxed">
+                        Además de mi experiencia técnica, cuento con varios años de trabajo en
+                        <span class="relative group cursor-help text-white font-medium inline-block">
+
+                            <span
+                                class="relative z-10 after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-cyan-400/60">
+                                entornos de atención al cliente,
+                            </span>
+
+                            <span
+                                class="pointer-events-none absolute left-1/2 top-full z-20 mt-2 w-64 -translate-x-1/2 rounded-xl border border-white/10 bg-slate-900/95 p-3 text-xs text-white/80 opacity-0 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:scale-100">
+
+                                Recepcionista, Dependiente y Asesor mobiliario.
+                            </span>
+
+                        </span>
+
+                        lo que me ha
+                        permitido desarrollar habilidades clave como comunicación efectiva,
+                        gestión de incidencias, trabajo bajo presión y orientación a resultados.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS (CATEGORÍAS) -->
+        <section id="Proyectos"
+            class="w-full rounded-3xl flex flex-col gap-6 border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
+            aria-labelledby="projects-title">
+
+            <!-- Título de sección -->
+            <div class="flex items-center gap-3 mb-2">
+                <img src="assets/img/3dicons-at-dynamic-color.png" alt="" aria-hidden="true"
+                    class="w-10 h-10 opacity-90 transition-transform duration-300 hover:-rotate-6 hover:scale-105 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]" />
+                <h2 id="projects-title"
+                    class="relative inline-block text-2xl sm:text-3xl font-semibold tracking-tight text-white after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full hover:after:[box-shadow:0_0_8px_rgba(34,211,238,0.6)]">
+                    Proyectos
+                </h2>
+            </div>
+
+            <p class="text-white/70 text-sm sm:text-base">
+                Explora mis trabajos por categoría: diseño (UI/UX) y desarrollo (front/full-stack).
+            </p>
+
+            <!-- Grid categorías -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
+
+                <!-- Card: DESARROLLO WEB -->
+                <a href="./pages/dev.html"
+                    class="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm hover:bg-white/6 transition focus:outline-none focus:ring-2 focus:ring-cyan-300/40">
+
+                    <!-- Fondo decorativo (logos dev) -->
+                    <div aria-hidden="true"
+                        class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.22),transparent_55%),radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.20),transparent_60%)]">
+                    </div>
+
+                    <div class="relative flex flex-col gap-4">
+                        <div class="flex items-center justify-between gap-4">
+                            <div class="inline-flex items-center gap-3">
+                                <div
+                                    class="h-11 w-11 rounded-2xl border border-white/10 bg-white/5 grid place-items-center">
+                                    <img src="assets/img/logoJS.png" alt="" aria-hidden="true"
+                                        class="w-6 h-6 opacity-90" />
+                                </div>
+                                <div>
+                                    <h3 class="text-xl sm:text-2xl font-semibold text-white">Desarrollo web</h3>
+                                    <p class="text-white/60 text-sm">Front · Back · Full-Stack</p>
+                                </div>
+                            </div>
+
+                            <span
+                                class="shrink-0 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-white/10 border border-white/10 text-white/70">
+                                Ver proyectos
+                                <span class="transition-transform group-hover:translate-x-0.5">→</span>
+                            </span>
+                        </div>
+
+                        <p class="text-white/75 text-sm sm:text-base leading-relaxed max-w-prose">
+                            Proyectos reales y prácticas: dashboards, portfolios, componentes UI y apps con lógica de
+                            datos.
+                        </p>
+
+                        <!-- Logos dev “bonitos” -->
+                        <div class="flex flex-wrap items-center gap-3 pt-1" aria-label="Tecnologías de desarrollo">
+                            <span
+                                class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs bg-white/10 border border-white/10 text-white/80">
+                                <img src="assets/img/html.png" class="w-4 h-4" alt="" aria-hidden="true" />
+                                HTML
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs bg-white/10 border border-white/10 text-white/80">
+                                <img src="assets/img/css.png" class="w-4 h-4" alt="" aria-hidden="true" />
+                                CSS
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs bg-white/10 border border-white/10 text-white/80">
+                                <img src="assets/img/logoTailwind.png" class="w-5 h-4" alt="" aria-hidden="true" />
+                                Tailwind
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs bg-white/10 border border-white/10 text-white/80">
+                                <img src="assets/img/logoJS.png" class="w-4 h-4" alt="" aria-hidden="true" />
+                                JavaScript
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card: DISEÑO WEB -->
+                <a href="./pages/design.html"
+                    class="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm hover:bg-white/6 transition focus:outline-none focus:ring-2 focus:ring-cyan-300/40">
+
+                    <!-- Glow -->
+                    <div aria-hidden="true"
+                        class="pointer-events-none absolute -inset-24 opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.35),transparent_55%),radial-gradient(circle_at_80%_70%,rgba(34,211,238,0.25),transparent_60%)]">
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="relative flex flex-col gap-4">
+                        <div class="flex items-center justify-between gap-4">
+                            <div class="inline-flex items-center gap-3">
+                                <div
+                                    class="h-11 w-11 rounded-2xl border border-white/10 bg-white/5 grid place-items-center">
+                                    <img src="assets/img/logoFigma.png" alt="" aria-hidden="true"
+                                        class="w-6 h-6 opacity-90" />
+                                </div>
+                                <div>
+                                    <h3 class="text-xl sm:text-2xl font-semibold text-white">Diseño web</h3>
+                                    <p class="text-white/60 text-sm">UI · UX · Prototipado</p>
+                                </div>
+                            </div>
+
+                            <span
+                                class="shrink-0 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-white/10 border border-white/10 text-white/70">
+                                Ver proyectos
+                                <span class="transition-transform group-hover:translate-x-0.5">→</span>
+                            </span>
+                        </div>
+
+                        <p class="text-white/75 text-sm sm:text-base leading-relaxed max-w-prose">
+                            Prototipos y diseño visual en Figma: sistemas de diseño, componentes, landing pages y
+                            mejoras UI.
+                        </p>
+
+                        <!-- Chips -->
+                        <div class="flex flex-wrap gap-2 pt-1" aria-label="Tecnologías y herramientas de diseño">
+                            <span
+                                class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs bg-white/10 border border-white/10 text-white/80">
+                                <img src="assets/img/logoFigma.png" class="w-4 h-4" alt="" aria-hidden="true" />
+                                Figma
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- CONOCIMIENTOS -->
+        <section id="Conocimientos"
+            class="w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
+            aria-labelledby="skills-title">
+
+            <!-- Título -->
+            <div class="flex items-center gap-3 mb-8">
+                <img src="assets/img/3dicons-boy-dynamic-color.png" alt="" aria-hidden="true"
+                    class="w-10 h-10 opacity-90 transition-transform duration-300 hover:-rotate-6 hover:scale-105 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]" />
+
+                <h2 id="skills-title"
+                    class="relative inline-block text-2xl sm:text-3xl font-semibold tracking-tight text-white after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full hover:after:[box-shadow:0_0_8px_rgba(34,211,238,0.6)]">
+                    Conocimientos
+                </h2>
+            </div>
+
+            <!-- Grid de tecnologías -->
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 gap-4 sm:gap-5">
+                <div
+                    class="relative group rounded-2xl border border-white/10 bg-slate-950/40 p-3 flex items-center justify-center hover:bg-white/6 transition">
+                    <!-- Icono -->
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition"
+                        src="assets/img/java.png" alt="Java" loading="lazy" decoding="async" />
+
+                    <!-- Tooltip -->
+                    <div
+                        class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-lg border border-white/10 bg-slate-900/90 px-3 py-1 text-xs text-white whitespace-nowrap opacity-0 translate-y-1 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 shadow-lg backdrop-blur-md">
+                        Java
+                    </div>
+                </div>
+
+                <div
+                    class="relative group rounded-2xl border border-white/10 bg-slate-950/40 p-3 flex items-center justify-center hover:bg-white/6 transition">
+                    <!-- Icono -->
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition"
+                        src="assets/img/html.png" alt="Java" loading="lazy" decoding="async" />
+
+                    <!-- Tooltip -->
+                    <div
+                        class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-lg border border-white/10 bg-slate-900/90 px-3 py-1 text-xs text-white whitespace-nowrap opacity-0 translate-y-1 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 shadow-lg backdrop-blur-md">
+                        HTML
+                    </div>
+                </div>
+
+                <div
+                    class="relative group rounded-2xl border border-white/10 bg-slate-950/40 p-3 flex items-center justify-center hover:bg-white/6 transition">
+                    <!-- Icono -->
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition"
+                        src="assets/img/css.png" alt="Java" loading="lazy" decoding="async" />
+
+                    <!-- Tooltip -->
+                    <div
+                        class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-lg border border-white/10 bg-slate-900/90 px-3 py-1 text-xs text-white whitespace-nowrap opacity-0 translate-y-1 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 shadow-lg backdrop-blur-md">
+                        CSS
+                    </div>
+                </div>
+
+                <div
+                    class="relative group rounded-2xl border border-white/10 bg-slate-950/40 p-3 flex items-center justify-center hover:bg-white/6 transition">
+                    <!-- Icono -->
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition"
+                        src="assets/img/logoTailwind.png" alt="Java" loading="lazy" decoding="async" />
+
+                    <!-- Tooltip -->
+                    <div
+                        class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-lg border border-white/10 bg-slate-900/90 px-3 py-1 text-xs text-white whitespace-nowrap opacity-0 translate-y-1 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 shadow-lg backdrop-blur-md">
+                        Tailwind
+                    </div>
+                </div>
+
+                <div
+                    class="relative group rounded-2xl border border-white/10 bg-slate-950/40 p-3 flex items-center justify-center hover:bg-white/6 transition">
+                    <!-- Icono -->
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition"
+                        src="assets/img/logoJS.png" alt="Java" loading="lazy" decoding="async" />
+
+                    <!-- Tooltip -->
+                    <div
+                        class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-lg border border-white/10 bg-slate-900/90 px-3 py-1 text-xs text-white whitespace-nowrap opacity-0 translate-y-1 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 shadow-lg backdrop-blur-md">
+                        Javascript
+                    </div>
+                </div>
+
+                <div
+                    class="relative group rounded-2xl border border-white/10 bg-slate-950/40 p-3 flex items-center justify-center hover:bg-white/6 transition">
+                    <!-- Icono -->
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition"
+                        src="assets/img/logoWordpress.png" alt="Java" loading="lazy" decoding="async" />
+
+                    <!-- Tooltip -->
+                    <div
+                        class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-lg border border-white/10 bg-slate-900/90 px-3 py-1 text-xs text-white whitespace-nowrap opacity-0 translate-y-1 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 shadow-lg backdrop-blur-md">
+                        Wordpress
+                    </div>
+                </div>
+
+                <div
+                    class="relative group rounded-2xl border border-white/10 bg-slate-950/40 p-3 flex items-center justify-center hover:bg-white/6 transition">
+                    <!-- Icono -->
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition"
+                        src="assets/img/logoElementor.png" alt="Java" loading="lazy" decoding="async" />
+
+                    <!-- Tooltip -->
+                    <div
+                        class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-lg border border-white/10 bg-slate-900/90 px-3 py-1 text-xs text-white whitespace-nowrap opacity-0 translate-y-1 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 shadow-lg backdrop-blur-md">
+                        Elementor
+                    </div>
+                </div>
+
+                <div
+                    class="relative group rounded-2xl border border-white/10 bg-slate-950/40 p-3 flex items-center justify-center hover:bg-white/6 transition">
+                    <!-- Icono -->
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition"
+                        src="assets/img/webflow.png" alt="Java" loading="lazy" decoding="async" />
+
+                    <!-- Tooltip -->
+                    <div
+                        class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-lg border border-white/10 bg-slate-900/90 px-3 py-1 text-xs text-white whitespace-nowrap opacity-0 translate-y-1 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 shadow-lg backdrop-blur-md">
+                        Webflow
+                    </div>
+                </div>
+
+                <div
+                    class="relative group rounded-2xl border border-white/10 bg-slate-950/40 p-3 flex items-center justify-center hover:bg-white/6 transition">
+                    <!-- Icono -->
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition"
+                        src="assets/img/logoGithubWhite.png" alt="Java" loading="lazy" decoding="async" />
+
+                    <!-- Tooltip -->
+                    <div
+                        class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-lg border border-white/10 bg-slate-900/90 px-3 py-1 text-xs text-white whitespace-nowrap opacity-0 translate-y-1 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 shadow-lg backdrop-blur-md">
+                        Github
+                    </div>
+                </div>
+
+                <div
+                    class="relative group rounded-2xl border border-white/10 bg-slate-950/40 p-3 flex items-center justify-center hover:bg-white/6 transition">
+                    <!-- Icono -->
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition"
+                        src="assets/img/php.png" alt="Java" loading="lazy" decoding="async" />
+
+                    <!-- Tooltip -->
+                    <div
+                        class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-lg border border-white/10 bg-slate-900/90 px-3 py-1 text-xs text-white whitespace-nowrap opacity-0 translate-y-1 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 shadow-lg backdrop-blur-md">
+                        PHP
+                    </div>
+                </div>
+
+                <div
+                    class="relative group rounded-2xl border border-white/10 bg-slate-950/40 p-3 flex items-center justify-center hover:bg-white/6 transition">
+                    <!-- Icono -->
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition"
+                        src="assets/img/mySQL.png" alt="Java" loading="lazy" decoding="async" />
+
+                    <!-- Tooltip -->
+                    <div
+                        class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-lg border border-white/10 bg-slate-900/90 px-3 py-1 text-xs text-white whitespace-nowrap opacity-0 translate-y-1 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 shadow-lg backdrop-blur-md">
+                        MySQL
+                    </div>
+                </div>
+
+                <div
+                    class="relative group rounded-2xl border border-white/10 bg-slate-950/40 p-3 flex items-center justify-center hover:bg-white/6 transition">
+                    <!-- Icono -->
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition"
+                        src="assets/img/logoFigma.png" alt="Java" loading="lazy" decoding="async" />
+
+                    <!-- Tooltip -->
+                    <div
+                        class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-lg border border-white/10 bg-slate-900/90 px-3 py-1 text-xs text-white whitespace-nowrap opacity-0 translate-y-1 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 shadow-lg backdrop-blur-md">
+                        Figma
+                    </div>
+                </div>
+
+                <div
+                    class="relative group rounded-2xl border border-white/10 bg-slate-950/40 p-3 flex items-center justify-center hover:bg-white/6 transition">
+                    <!-- Icono -->
+                    <img class="w-10 h-10 sm:w-12 sm:h-12 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition"
+                        src="assets/img/adobeXD.png" alt="Java" loading="lazy" decoding="async" />
+
+                    <!-- Tooltip -->
+                    <div
+                        class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 rounded-lg border border-white/10 bg-slate-900/90 px-3 py-1 text-xs text-white whitespace-nowrap opacity-0 translate-y-1 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 shadow-lg backdrop-blur-md">
+                        AdobeXD
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MÍ -->
+        <section id="SobreMi"
+            class="w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
+            aria-labelledby="about-title">
+
+            <!-- Título -->
+            <div class="flex items-center gap-3 mb-8">
+                <img src="assets/img/miIcono.png" alt="" aria-hidden="true"
+                    class="w-10 h-10 object-contain opacity-90 transition-transform duration-300 hover:-rotate-6 hover:scale-105 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]" />
+
+                <h2 id="about-title"
+                    class="relative inline-block text-2xl sm:text-3xl font-semibold tracking-tight text-white after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full hover:after:[box-shadow:0_0_8px_rgba(34,211,238,0.6)]">
+                    Sobre mí
+                </h2>
+            </div>
+
+            <!-- Contenido -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Texto -->
+                <div class="lg:col-span-7 space-y-4 text-white/80 leading-relaxed">
+                    <p>
+                        Me llamo <span class="text-white font-semibold">Guille</span> y desde pequeño siempre he estado
+                        pegado a un
+                        ordenador. La tecnología y los videojuegos han sido parte de mi vida desde siempre, y con el
+                        tiempo esa curiosidad
+                        por “cómo funcionan las cosas” me llevó al
+                        <span class="text-white font-semibold">desarrollo web</span>.
+                    </p>
+
+                    <p>
+                        Hoy sigo con la misma ilusión, creando proyectos, aprendiendo cada día y mejorando mis
+                        habilidades. Actualmente
+                        estoy formándome en <span class="text-sky-300 font-semibold">React</span> y ampliando mis
+                        conocimientos en nuevas
+                        tecnologías y lenguajes.
+                    </p>
+
+                    <p>
+                        Soy una persona curiosa, constante y con muchas ganas de seguir creciendo dentro del mundo del
+                        desarrollo web,
+                        aportando valor en cada proyecto y
+                        <span class="text-white font-semibold">evolucionando</span> tanto a nivel técnico como
+                        profesional.
+                    </p>
+                </div>
+
+                <!-- Imagen -->
+                <div class="lg:col-span-5">
+                    <div class="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/40 shadow-sm">
+                        <img class="w-full h-80 object-cover hover:scale-[1.02] transition duration-300"
+                            src="assets/img/foto.jpg" alt="Guille en su setup" loading="lazy" decoding="async" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="Contacto"
+            class="w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
+            aria-labelledby="contact-title">
+
+            <!-- Título -->
+            <div class="flex items-center gap-3 mb-8">
+                <img src="assets/img/3dicons-mail-dynamic-color.png" alt="" aria-hidden="true"
+                    class="w-10 h-10 opacity-90 transition-transform duration-300 hover:-rotate-6 hover:scale-105 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]" />
+
+                <h2 id="contact-title"
+                    class="relative inline-block text-2xl sm:text-3xl font-semibold tracking-tight text-white after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full hover:after:[box-shadow:0_0_8px_rgba(34,211,238,0.6)]">
+                    Contacto
+                </h2>
+            </div>
+
+            <!-- Contenido -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                <!-- Texto -->
+                <div class="lg:col-span-5 space-y-4 text-white/80 leading-relaxed">
+                    <p>¿Tienes un proyecto en mente, una idea o simplemente quieres hablar?</p>
+                    <p>Puedes escribirme a través de este formulario y te responderé lo antes posible.</p>
+                    <p class="text-white/60 text-sm">
+                        *Disponible para proyectos web, colaboraciones o nuevas oportunidades.
+                    </p>
+                </div>
+
+                <!-- Formulario -->
+                <form class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4" aria-label="Formulario de contacto">
+                    <div class="flex flex-col gap-1">
+                        <label for="contact-name" class="text-sm text-white/70">Nombre</label>
+                        <input id="contact-name" type="text" required placeholder="Tu nombre"
+                            class="rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-sky-400/40" />
+                    </div>
+
+                    <div class="flex flex-col gap-1">
+                        <label for="contact-email" class="text-sm text-white/70">Email</label>
+                        <input id="contact-email" type="email" required placeholder="tu@email.com"
+                            class="rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-sky-400/40" />
+                    </div>
+
+                    <div class="sm:col-span-2 flex flex-col gap-1">
+                        <label for="contact-subject" class="text-sm text-white/70">Asunto</label>
+                        <input id="contact-subject" type="text" placeholder="Motivo del mensaje"
+                            class="rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-sky-400/40" />
+                    </div>
+
+                    <div class="sm:col-span-2 flex flex-col gap-1">
+                        <label for="contact-message" class="text-sm text-white/70">Mensaje</label>
+                        <textarea id="contact-message" rows="5" required placeholder="Cuéntame sobre tu proyecto..."
+                            class="rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 resize-none focus:outline-none focus:ring-2 focus:ring-sky-400/40"></textarea>
+                    </div>
+
+                    <!-- Botón -->
+                    <div class="sm:col-span-2 flex justify-start pt-2">
+                        <button type="submit"
+                            class="inline-flex items-center justify-center gap-3 rounded-xl px-6 py-3 bg-sky-500/15 hover:bg-sky-500/25 border border-sky-400/25 text-sky-100 font-semibold transition shadow-sm">
+                            <img class="w-5 h-5" src="assets/img/logoMailWhitev2 (1).png" alt="" aria-hidden="true" />
+                            Enviar mensaje
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-full mt-10 rounded-3xl border border-white/10 bg-white/0 backdrop-blur-xl shadow-lg"
+        aria-label="Pie de página">
+
+        <div class="mx-auto max-w-6xl px-6 sm:px-10 py-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                <!-- Marca + descripción -->
+                <div class="lg:col-span-7 space-y-4">
+                    <!-- Logo y nombre -->
+                    <div class="flex items-center gap-3">
+                        <img class="w-auto h-10 opacity-95" src="assets/img/guilleODEVWhite-transparent.png"
+                            alt="Logo GuilleODEV" loading="lazy" decoding="async" />
+                        <div>
+                            <p class="text-white font-semibold leading-none">Guillermo Redondo Camacho</p>
+                            <p class="text-white/60 text-sm">Desarrollador web · Diseño web · UI</p>
+                        </div>
+                    </div>
+
+                    <!-- Texto descriptivo -->
+                    <p class="text-white/70 text-sm leading-relaxed max-w-md">
+                        Portfolio personal donde muestro proyectos reales, mi experiencia y las tecnologías con las que
+                        trabajo.
+                        Si te interesa colaborar o tienes una idea, escríbeme.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-row gap-3 pt-1">
+                        <a href="#Contacto"
+                            class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-3 bg-sky-500/15 hover:bg-sky-500/25 border border-sky-400/25 text-sky-100 transition shadow-sm"
+                            aria-label="Ir a la sección de contacto">
+                            <img class="w-3 h-3" src="assets/img/logoMailWhite.webp" alt="" aria-hidden="true" />
+                            <span class="font-semibold">Contactar</span>
+                        </a>
+
+                        <a href="#Proyectos"
+                            class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-3 bg-white/10 hover:bg-white/15 border border-white/15 hover:border-white/25 transition shadow-sm text-white"
+                            aria-label="Ir a la sección de proyectos">
+                            <span class="font-semibold">Ver proyectos</span>
+                            <span class="text-white/70" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Redes sociales -->
+                <div class="lg:col-span-4">
+                    <p class="text-white font-semibold mb-3">Redes</p>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <!-- GitHub -->
+                        <a href="https://github.com/guilleodev" target="_blank" rel="noreferrer"
+                            class="group flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/40 px-4 py-3 hover:bg-white/6 transition"
+                            aria-label="Abrir GitHub de guilleodev en una nueva pestaña">
+                            <div class="flex items-center gap-3">
+                                <img class="w-6 h-6 opacity-90 group-hover:opacity-100"
+                                    src="assets/img/logoGithubWhite.png" alt="" aria-hidden="true" loading="lazy"
+                                    decoding="async" />
+                                <div>
+                                    <p class="text-white text-sm font-semibold leading-tight">GitHub</p>
+                                    <p class="text-white/55 text-xs">/guilleodev</p>
+                                </div>
+                            </div>
+                            <span class="text-white/50 group-hover:text-white/80 transition" aria-hidden="true">↗</span>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/guillermo-redondo-camacho" target="_blank" rel="noreferrer"
+                            class="group flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/40 px-4 py-3 hover:bg-white/6 transition"
+                            aria-label="Abrir LinkedIn de Guillermo Redondo en una nueva pestaña">
+                            <div class="flex items-center gap-3">
+                                <img class="w-6 h-6 opacity-90 group-hover:opacity-100"
+                                    src="assets/img/logoLinkedin.PNG" alt="" aria-hidden="true" loading="lazy"
+                                    decoding="async" />
+                                <div>
+                                    <p class="text-white text-sm font-semibold leading-tight">LinkedIn</p>
+                                    <p class="text-white/55 text-xs">Guillermo Redondo</p>
+                                </div>
+                            </div>
+                            <span class="text-white/50 group-hover:text-white/80 transition" aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Línea inferior -->
+            <div
+                class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3 items-center justify-between">
+                <p class="text-xs text-white/50">
+                    © <span id="year"></span> GuilleODEV. Todos los derechos reservados.
+                </p>
+
+                <!-- Enlaces rápidos -->
+                <div class="flex items-center gap-4 text-xs text-white/50">
+                    <a href="#Proyectos" class="hover:text-white/80 transition">Proyectos</a>
+                    <span class="text-white/20" aria-hidden="true">•</span>
+                    <a href="#main" class="hover:text-white/80 transition">Volver arriba ↑</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cursor personalizado -->
+    <div class="cursor-glass" aria-hidden="true"></div>
+
+    <!-- Botón flotante volver arriba -->
+    <button id="scrollTopBtn" aria-label="Subir arriba" class="fixed bottom-6 right-6 z-50 hidden rounded-full p-3
+  bg-cyan-300 text-black shadow-lg shadow-cyan-500/30
+  hover:bg-cyan-400 hover:scale-110 transition-all duration-300">
+        ↑
+    </button>
+
+    <script src="assets/js/script.js"></script>
+    <!--
+    <script> tailwind.config = { theme: { extend: { keyframes: { float: { "0%, 100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-18px)" } }, floatv2: { "0%, 100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(3px)" } } }, animation: { float: "float 6s ease-in-out infinite", floatSlow: "float 8s ease-in-out infinite", floatSlowv2: "floatv2 5s ease-in-out infinite" } } } } </script>
+    <script src="https://cdn.tailwindcss.com"></script> -->
+
+</body>
+
+</html>

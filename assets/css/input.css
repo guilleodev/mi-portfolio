@@ -1,0 +1,410 @@
+@import "tailwindcss";
+
+/* Tus estilos custom debajo */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Profundidad base */
+.hero-person-3d {
+    transform: translateZ(90px);
+    transform-style: preserve-3d;
+    transition: transform 220ms cubic-bezier(.2, .8, .2, 1);
+    will-change: transform;
+}
+
+/* El “lienzo” del hero */
+.hero-stage {
+    z-index: 35;
+}
+
+/* Tamaño de los logos */
+.hero-hand {
+    width: clamp(160px, 24%, 420px);
+    aspect-ratio: 1 / 1;
+}
+
+.hero-hand-left {
+    left: 20%;
+    top: 47%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-hand-right {
+    left: 77%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-bg-3d {
+    transform: translateZ(-40px) scale(1.08);
+    transform-style: preserve-3d;
+    transition: transform 260ms cubic-bezier(.2, .8, .2, 1);
+    will-change: transform;
+}
+
+@keyframes floatSoft {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-25px);
+    }
+}
+
+@keyframes floatSoftSlow {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-20px);
+    }
+}
+
+.float-soft {
+    animation: floatSoft 5s ease-in-out infinite;
+}
+
+.float-soft-slow {
+    animation: floatSoftSlow 7s ease-in-out infinite;
+}
+
+/* Cursor */
+
+@layer base {
+
+    /* Cursor normal (flecha azul) */
+    html {
+        cursor: url("../cursor-blue.svg") 1 1, auto;
+    }
+
+    /* Cursor pointer (mano azul) */
+    a,
+    button,
+    [role="button"],
+    input[type="button"],
+    input[type="submit"],
+    label,
+    [data-cursor="pointer"] {
+        cursor: url("../cursor-hand-blue.svg") 8 2, pointer;
+    }
+}
+
+/* === Glass circle === */
+.cursor-glass {
+    pointer-events: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 26px;
+    height: 26px;
+    border-radius: 9999px;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+
+    /* Glass effect */
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.22),
+            rgba(255, 255, 255, 0.06));
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.28),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+    transition:
+        width 180ms ease,
+        height 180ms ease,
+        backdrop-filter 180ms ease,
+        box-shadow 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease,
+        transform 120ms ease;
+}
+
+/* Estado pointer */
+.cursor-glass.is-pointer {
+    width: 56px;
+    height: 56px;
+
+    backdrop-filter: blur(0.5px);
+    -webkit-backdrop-filter: blur(0.5px);
+
+    background: linear-gradient(135deg,
+            rgba(34, 211, 238, 0.20),
+            rgba(255, 255, 255, 0.06));
+
+    border-color: rgba(34, 211, 238, 0.45);
+
+    box-shadow:
+        0 12px 40px rgba(34, 211, 238, 0.25),
+        0 8px 25px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+/* Giro logos header */
+@keyframes spinPop {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        filter: drop-shadow(0 0 25px rgba(34, 211, 238, 0.6));
+    }
+
+    40% {
+        transform: translate(-50%, -50%) rotate(180deg) scale(1.15);
+        filter: drop-shadow(0 0 45px rgba(34, 211, 238, 0.9));
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+        filter: drop-shadow(0 0 25px rgba(34, 211, 238, 0.6));
+    }
+}
+
+.hero-spin {
+    animation: spinPop 700ms cubic-bezier(.2, .9, .3, 1);
+}
+
+/* Video header */
+#heroBg {
+    opacity: 0.4;
+    filter:
+        blur(2px) brightness(0.65) contrast(0.8) saturate(0.85);
+    transform: scale(1.03);
+}
+
+/* Partículas header */
+.ambient-header {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    /* capa dentro del header */
+    pointer-events: none;
+}
+
+/* Partículas cian */
+.ambient-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.18;
+    mix-blend-mode: screen;
+    filter: blur(0.2px);
+    background:
+        radial-gradient(circle, rgba(34, 211, 238, .55) 0 1px, transparent 2px) 0 0/140px 140px,
+        radial-gradient(circle, rgba(34, 211, 238, .35) 0 1px, transparent 2px) 40px 80px/180px 180px,
+        radial-gradient(circle, rgba(34, 211, 238, .25) 0 1px, transparent 2px) 70px 20px/220px 220px;
+    animation: headerParticlesUp 9s linear infinite;
+}
+
+/* “Matrix” suave */
+.ambient-header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.08;
+    mix-blend-mode: screen;
+    background:
+        repeating-linear-gradient(to bottom,
+            rgba(34, 211, 238, .10),
+            rgba(34, 211, 238, .10) 1px,
+            transparent 1px,
+            transparent 7px),
+        radial-gradient(circle at 50% 10%, rgba(34, 211, 238, .08), transparent 55%);
+    animation: headerMatrixFlicker 3.2s ease-in-out infinite;
+}
+
+@keyframes headerParticlesUp {
+    0% {
+        background-position: 0 0, 40px 0, 70px 0;
+    }
+
+    100% {
+        background-position: 0 -520px, 40px -640px, 70px -760px;
+    }
+}
+
+@keyframes headerMatrixFlicker {
+
+    0%,
+    100% {
+        opacity: 0.06;
+        filter: none;
+    }
+
+    50% {
+        opacity: 0.11;
+        filter: saturate(1.15) contrast(1.05);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ambient-header::before,
+    .ambient-header::after {
+        animation: none;
+    }
+}
+
+/* Particulas en body */
+
+/* Capa global */
+.ambient-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    /* capa base */
+    pointer-events: none;
+    opacity: 1;
+}
+
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Partículas cian */
+.ambient-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.13;
+    mix-blend-mode: screen;
+    filter: blur(0.25px);
+    background:
+        radial-gradient(circle, rgba(34, 211, 238, .55) 0 1px, transparent 2px) 0 0/120px 140px,
+        radial-gradient(circle, rgba(34, 211, 238, .35) 0 1px, transparent 2px) 30px 70px/180px 210px,
+        radial-gradient(circle, rgba(34, 211, 238, .22) 0 1px, transparent 2px) 80px 20px/240px 260px,
+        radial-gradient(circle, rgba(34, 211, 238, .18) 0 1px, transparent 2px) 10px 110px/320px 300px;
+
+    animation: ambientParticlesDrift 12s linear infinite;
+}
+
+
+/* “Matrix” suave (scanlines + flicker) */
+@keyframes ambientMatrixFlicker {
+
+    0%,
+    100% {
+        opacity: 0.06;
+        filter: none;
+    }
+
+    50% {
+        opacity: 0.11;
+        filter: saturate(1.15) contrast(1.05);
+    }
+}
+
+@keyframes ambientParticlesDrift {
+    0% {
+        background-position:
+            0 0,
+            30px 0,
+            80px 0,
+            10px 0;
+        transform: translateX(0);
+    }
+
+    25% {
+        background-position:
+            20px -160px,
+            -10px -210px,
+            120px -240px,
+            40px -180px;
+        transform: translateX(-6px);
+    }
+
+    50% {
+        background-position:
+            -15px -320px,
+            35px -460px,
+            60px -520px,
+            -25px -390px;
+        transform: translateX(8px);
+    }
+
+    75% {
+        background-position:
+            30px -520px,
+            -25px -680px,
+            140px -760px,
+            55px -610px;
+        transform: translateX(-10px);
+    }
+
+    100% {
+        background-position:
+            0 -760px,
+            30px -980px,
+            80px -1120px,
+            10px -920px;
+        transform: translateX(0);
+    }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+
+    .ambient-bg::before,
+    .ambient-bg::after {
+        animation: none;
+    }
+}
+
+/* =========================
+   HERO: FIX RESPONSIVE MÓVIL
+   ========================= */
+@media (max-width: 640px) {
+
+    header {
+        overflow-x: hidden;
+    }
+
+    .hero-hand {
+        width: clamp(120px, 22vw, 200px);
+    }
+
+    .hero-hand-left {
+        left: 20%;
+        top: 49%;
+    }
+
+    .hero-hand-right {
+        left: 74%;
+        top: 47%;
+    }
+
+    @keyframes floatSoft {
+
+        0%,
+        100% {
+            transform: translate(-50%, -50%) translateY(0);
+        }
+
+        50% {
+            transform: translate(-50%, -50%) translateY(-14px);
+        }
+    }
+
+    @keyframes floatSoftSlow {
+
+        0%,
+        100% {
+            transform: translate(-50%, -50%) translateY(0);
+        }
+
+        50% {
+            transform: translate(-50%, -50%) translateY(-12px);
+        }
+    }
+}
