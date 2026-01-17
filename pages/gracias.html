@@ -1,16 +1,117 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <title>Gracias</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <title>¡Gracias! · GuilleODEV</title>
   </head>
-  <body class="min-h-screen grid place-items-center bg-gray-950 text-white">
-    <div class="max-w-md text-center p-6 rounded-2xl border border-white/10 bg-white/5">
-      <h1 class="text-2xl font-semibold">¡Gracias!</h1>
-      <p class="text-white/70 mt-2">Mensaje enviado. Te responderé lo antes posible.</p>
-      <a href="/" class="inline-block mt-5 text-cyan-300 hover:underline">Volver al inicio</a>
-    </div>
+
+  <body class="min-h-screen bg-gray-950 text-white">
+    <main class="mx-auto max-w-3xl px-6 py-14 sm:py-20">
+      <!-- Card -->
+      <section
+        class="w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
+        aria-labelledby="thanks-title"
+      >
+        <!-- Título -->
+        <div class="flex items-center gap-3 mb-8">
+          <img
+            src="../assets/img/3dicons-mail-dynamic-color.png"
+            alt=""
+            aria-hidden="true"
+            class="w-10 h-10 opacity-90 transition-transform duration-300 hover:-rotate-6 hover:scale-105 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]"
+          />
+
+          <h1
+            id="thanks-title"
+            class="relative inline-block text-2xl sm:text-3xl font-semibold tracking-tight text-white
+                   after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cyan-400
+                   after:transition-all after:duration-300 hover:after:w-full
+                   hover:after:[box-shadow:0_0_8px_rgba(34,211,238,0.6)]"
+          >
+            ¡Mensaje enviado!
+          </h1>
+        </div>
+
+        <!-- Contenido -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <!-- Texto -->
+          <div class="lg:col-span-7 space-y-4 text-white/80 leading-relaxed">
+            <p class="text-white/80">
+              Gracias por contactar conmigo. He recibido tu mensaje y te responderé lo antes posible.
+            </p>
+
+            <div class="rounded-2xl border border-white/10 bg-slate-950/40 p-5 sm:p-6 shadow-sm">
+              <div class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-cyan-400" aria-hidden="true"></span>
+                <p class="text-sm text-white/75 leading-relaxed">
+                  Normalmente respondo en <span class="text-white font-medium">24–48h</span>.
+                  Si es urgente, puedes escribirme por LinkedIn.
+                </p>
+              </div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+              <a
+                href="/"
+                class="inline-flex items-center justify-center gap-3 rounded-xl px-6 py-3
+                       bg-white/10 hover:bg-white/15 border border-white/15 hover:border-white/25
+                       transition shadow-sm text-white"
+                aria-label="Volver al inicio"
+              >
+                <span class="font-semibold">Volver al inicio</span>
+                <span class="text-white/70" aria-hidden="true">→</span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/guillermo-redondo-camacho"
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center justify-center gap-3 rounded-xl px-6 py-3
+                       bg-sky-500/15 hover:bg-sky-500/25 border border-sky-400/25
+                       text-sky-100 transition shadow-sm"
+                aria-label="Abrir LinkedIn"
+              >
+                <span class="font-semibold">Abrir LinkedIn</span>
+                <span class="text-sky-100/80" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bloque lateral -->
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl border border-white/10 bg-slate-950/40 p-6 shadow-sm">
+              <p class="text-white font-semibold">Siguiente paso</p>
+              <p class="text-white/70 text-sm mt-2 leading-relaxed">
+                Si tu mensaje es sobre un proyecto, puedes incluir en LinkedIn:
+                <span class="text-white/80 font-medium">plazo</span>, <span class="text-white/80 font-medium">objetivo</span>
+                y <span class="text-white/80 font-medium">referencias</span>.
+              </p>
+
+              <div class="mt-5 flex items-center gap-3 text-xs text-white/50">
+                <span class="inline-flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-cyan-400" aria-hidden="true"></span>
+                  GuilleODEV
+                </span>
+                <span class="text-white/20" aria-hidden="true">•</span>
+                <span>Portfolio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer mini -->
+      <p class="mt-8 text-center text-xs text-white/50">
+        © <span id="year"></span> GuilleODEV
+      </p>
+    </main>
+
+    <script>
+      const y = document.getElementById("year");
+      if (y) y.textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
