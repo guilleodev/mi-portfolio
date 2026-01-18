@@ -5,10 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proyectos · Desarrollo Web</title>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
 
-<body class="min-h-screen bg-gray-950 text-white">
+<body class="min-h-screen bg-gray-950 text-white font-mono">
 
     <main class="mx-auto max-w-6xl px-6 py-10">
         <a href="../index.html#Proyectos"
@@ -17,8 +20,8 @@
         </a>
 
         <header class="mt-6 mb-8">
-            <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">Desarrollo web</h1>
-            <p class="text-white/70 mt-2 max-w-2xl">
+            <h1 class="reveal text-3xl sm:text-4xl font-semibold tracking-tight" data-delay="100">Desarrollo web</h1>
+            <p class="reveal text-white/70 mt-2 max-w-2xl" data-delay="200">
                 Proyectos desarrollados en diferentes lenguajes.
             </p>
         </header>
@@ -30,16 +33,16 @@
             <!-- Título de sección -->
             <div class="flex items-center gap-3 mb-8">
                 <img src="../assets/img/3dicons-at-dynamic-color.png" alt="" aria-hidden="true"
-                    class="w-10 h-10 opacity-90 transition-transform duration-300 hover:-rotate-6 hover:scale-105 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]" />
+                    class="reveal w-10 h-10 opacity-90 transition-transform duration-300 hover:-rotate-6 hover:scale-105 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]" />
                 <h2 id="projects-title"
-                    class="relative inline-block text-2xl sm:text-3xl font-semibold tracking-tight text-white after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full hover:after:[box-shadow:0_0_8px_rgba(34,211,238,0.6)]">
+                    class="reveal relative inline-block text-2xl sm:text-3xl font-semibold tracking-tight text-white after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full hover:after:[box-shadow:0_0_8px_rgba(34,211,238,0.6)]">
                     Proyectos
                 </h2>
             </div>
 
             <!-- Card: Dashboard-progreso -->
             <article
-                class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm hover:bg-white/6 transition">
+                class="reveal grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm hover:bg-white/6 transition">
                 <div class="lg:col-span-6">
                     <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
                         <img class="w-full h-80 object-cover hover:scale-[1.02] transition duration-300"
@@ -72,7 +75,7 @@
                             rel="noreferrer"
                             class="inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80 hover:bg-yellow-200 hover:text-black transition shadow-sm">
                             <img class="w-4 h-4 opacity-90" src="../assets/img/logoJS.png" alt="" aria-hidden="true" />
-                            JS
+                            JavaScript
                         </a>
                     </div>
 
@@ -105,12 +108,12 @@
 
             <!-- Card: Plantilla demo Tailwind -->
             <article
-                class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm hover:bg-white/6 transition">
+                class="reveal grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm hover:bg-white/6 transition">
                 <div class="lg:col-span-6">
                     <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
                         <img class="w-full h-80 object-cover hover:scale-[1.02] transition duration-300"
                             src="../assets/img/capturaPlantillaPortfolioTailwind.png"
-                            alt="Vista previa del proyecto Gatuna Crochet" loading="lazy" decoding="async" />
+                            alt="Vista previa del proyecto Portfolio Tailwind" loading="lazy" decoding="async" />
                     </div>
                 </div>
 
@@ -122,20 +125,21 @@
 
                     <!-- Tech stack -->
                     <div class="flex flex-wrap gap-2" aria-label="Tecnologías usadas">
-                        <a href="https://html.com/es/" target="_blank" rel="noreferrer"
+                        <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noreferrer"
                             class="inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80 hover:bg-blue-200 hover:text-black transition shadow-sm">
                             <img class="w-4 h-4 opacity-90" src="../assets/img/html.png" alt="" aria-hidden="true" />
                             HTML
                         </a>
 
-                        <a href="https://tailwind.com/es/" target="_blank" rel="noreferrer"
+                        <a href="https://tailwindcss.com" target="_blank" rel="noreferrer"
                             class="inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80 hover:bg-red-200 hover:text-black transition shadow-sm">
                             <img class="w-5 h-4 opacity-90" src="../assets/img/logoTailwind.png" alt=""
                                 aria-hidden="true" />
                             Tailwind
                         </a>
 
-                        <a href="https://www.javascript.com/" target="_blank" rel="noreferrer"
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
+                            rel="noreferrer"
                             class="inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80 hover:bg-purple-200 hover:text-black transition shadow-sm">
                             <img class="w-4 h-4 opacity-90" src="../assets/img/logoJS.png" alt="" aria-hidden="true" />
                             JavaScript
@@ -172,7 +176,7 @@
 
             <!-- Card: Gatuna Crochet -->
             <article
-                class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm hover:bg-white/6 transition">
+                class="reveal grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm hover:bg-white/6 transition">
                 <div class="lg:col-span-6">
                     <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
                         <img class="w-full h-80 object-cover hover:scale-[1.02] transition duration-300"
@@ -229,7 +233,7 @@
                         </a> -->
 
                         <!-- Preview -->
-                        <a href="gatunacrochet.com"
+                        <a href="https://www.gatunacrochet.com"
                             class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-3 bg-zinc-300 hover:bg-zinc-100 border border-sky-400/25 text-black transition shadow-sm"
                             aria-label="Ver demo del proyecto Gatuna Crochet">
                             <img class="w-5 h-5" src="../assets/img/logoWeb.png" alt="" aria-hidden="true" />
@@ -241,7 +245,7 @@
 
             <!-- Card: Mi Portfolio -->
             <article
-                class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm hover:bg-white/6 transition">
+                class="reveal grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm hover:bg-white/6 transition">
                 <div class="lg:col-span-6">
                     <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
                         <img class="w-full h-80 object-cover hover:scale-[1.02] transition duration-300"
@@ -258,20 +262,20 @@
 
                     <!-- Tech stack -->
                     <div class="flex flex-wrap gap-2" aria-label="Tecnologías usadas">
-                        <a href="https://wordpress.com/es/" target="_blank" rel="noreferrer"
+                        <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noreferrer"
                             class="inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80 hover:bg-blue-200 hover:text-black transition shadow-sm">
                             <img class="w-4 h-4 opacity-90" src="../assets/img/html.png" alt="" aria-hidden="true" />
                             HTML
                         </a>
 
-                        <a href="https://elementor.com/es/" target="_blank" rel="noreferrer"
+                        <a href="https://tailwindcss.com" target="_blank" rel="noreferrer"
                             class="inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80 hover:bg-red-200 hover:text-black transition shadow-sm">
                             <img class="w-5 h-4 opacity-90" src="../assets/img/logoTailwind.png" alt=""
                                 aria-hidden="true" />
                             Tailwind
                         </a>
 
-                        <a href="https://www.figma.com/" target="_blank" rel="noreferrer"
+                        <a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank" rel="noreferrer"
                             class="inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80 hover:bg-purple-200 hover:text-black transition shadow-sm">
                             <img class="w-4 h-4 opacity-90" src="../assets/img/css.png" alt="" aria-hidden="true" />
                             CSS
@@ -289,7 +293,7 @@
                     <!-- Links -->
                     <div class="flex flex-row gap-3">
                         <!-- Code -->
-                        <a href="#"
+                        <a href="https://github.com/guilleodev/mi-portfolio"
                             class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-1 bg-white/10 hover:bg-white/15 border border-white/15 hover:border-white/25 transition shadow-sm"
                             aria-label="Ver código del proyecto Gatuna Crochet">
                             <img class="w-5 h-5" src="../assets/img/logoGithubWhite.png" alt="" aria-hidden="true" />
@@ -297,7 +301,7 @@
                         </a>
 
                         <!-- Preview -->
-                        <a href="#"
+                        <a href="https://guilleodev.netlify.app"
                             class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-3 bg-zinc-300 hover:bg-zinc-100 border border-sky-400/25 text-black transition shadow-sm"
                             aria-label="Ver demo del proyecto Gatuna Crochet">
                             <img class="w-5 h-5" src="../assets/img/logoWeb.png" alt="" aria-hidden="true" />
@@ -309,7 +313,7 @@
         </section>
     </main>
     <!-- FOOTER -->
-    <footer class="w-full mt-10 rounded-3xl border border-white/10 bg-white/0 backdrop-blur-xl shadow-lg"
+    <footer class="reveal w-full mt-10 rounded-3xl border border-white/10 bg-white/0 backdrop-blur-xl shadow-lg"
         aria-label="Pie de página">
 
         <div class="mx-auto max-w-6xl px-6 sm:px-10 py-10">
@@ -335,7 +339,7 @@
 
                     <!-- CTAs -->
                     <div class="flex flex-row gap-3 pt-1">
-                        <a href="#Contacto"
+                        <a href="../index.html#Contacto"
                             class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-3 bg-sky-500/15 hover:bg-sky-500/25 border border-sky-400/25 text-sky-100 transition shadow-sm"
                             aria-label="Ir a la sección de contacto">
                             <img class="w-3 h-3" src="../assets/img/logoMailWhite.webp" alt="" aria-hidden="true" />
@@ -407,6 +411,7 @@
             </div>
         </div>
     </footer>
+    <script src="../assets/js/script.js"></script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 
 /* Tus estilos custom debajo */
 * {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* Profundidad base */
@@ -406,5 +406,55 @@ footer {
         50% {
             transform: translate(-50%, -50%) translateY(-12px);
         }
+    }
+}
+
+/* =========================
+   REVEAL ON SCROLL
+   ========================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(8px);
+    transition: opacity 700ms ease, transform 700ms ease, filter 700ms ease;
+    will-change: opacity, transform, filter;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+/* Variantes opcionales */
+.reveal--left {
+    transform: translateX(-16px);
+}
+
+.reveal--right {
+    transform: translateX(16px);
+}
+
+.reveal--zoom {
+    transform: scale(0.98);
+}
+
+.reveal.is-visible.reveal--left,
+.reveal.is-visible.reveal--right,
+.reveal.is-visible.reveal--zoom {
+    transform: translateX(0) scale(1);
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal,
+    .reveal--left,
+    .reveal--right,
+    .reveal--zoom {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
     }
 }

@@ -38,14 +38,14 @@
 
         <!-- Vídeo de fondo del hero -->
         <video id="heroBg" class="absolute inset-0 -z-10 w-full h-full object-cover"
-            src="assets/vid/videoHeaderCompressed.mp4" autoplay muted loop playsinline preload="auto"
+            src="assets/vid/videoHeaderCompressedx15.mp4" autoplay muted loop playsinline preload="auto"
             aria-hidden="true"></video>
 
         <!-- Escenario 3D: persona + logos flotando (parallax controlado por JS/CSS) -->
         <div id="heroStage" class="hero-stage hero-person-3d pointer-events-none absolute -left-5 right-0 mx-auto
       bottom-[30%] sm:bottom-[30%] md:bottom-0
       w-[clamp(450px,95vw,1500px)] aspect-1500/900">
-            <div class="hero-person-wrap absolute inset-0">
+            <div class="reveal reveal--zoom hero-person-wrap absolute inset-0" data-delay="100">
                 <img src="assets/img/sinfondo.png" alt="Persona" draggable="false" class="hero-person absolute inset-0 w-full h-full object-contain select-none
           drop-shadow-[0_40px_60px_rgba(0,0,0,0.6)] brightness-105 contrast-105
           filter-[drop-shadow(0_0_18px_rgba(34,211,238,0.25))] will-change-transform" />
@@ -57,8 +57,8 @@
                 <span
                     class="absolute inset-0 rounded-full bg-cyan-400/30 blur-3xl opacity-70 group-hover:opacity-100 transition"
                     aria-hidden="true"></span>
-                <img src="assets/img/guilleODEVWhite-transparent.png" alt="Logo GuilleODEV" class="relative w-full h-full object-contain select-none transition duration-300 group-hover:scale-110
-          drop-shadow-[0_0_25px_rgba(34,211,238,0.6)]" />
+                <img src="assets/img/guilleODEVWhite-transparent.png" alt="Logo GuilleODEV" class="reveal reveal--left relative w-full h-full object-contain select-none transition duration-300 group-hover:scale-110
+          drop-shadow-[0_0_25px_rgba(34,211,238,0.6)]" data-delay="300" />
             </a>
 
             <!-- Logo flotante mano derecha -->
@@ -67,14 +67,14 @@
                 <span
                     class="absolute inset-0 rounded-full bg-cyan-400/30 blur-3xl opacity-70 group-hover:opacity-100 transition"
                     aria-hidden="true"></span>
-                <img src="assets/img/logov2White-transparent.png" alt="Logo (derecha)" class="relative w-full h-full object-contain select-none transition duration-300 group-hover:scale-110
-          drop-shadow-[0_0_25px_rgba(34,211,238,0.6)]" />
+                <img src="assets/img/logov2White-transparent.png" alt="Logo (derecha)" class="reveal reveal--right relative w-full h-full object-contain select-none transition duration-300 group-hover:scale-110
+          drop-shadow-[0_0_25px_rgba(34,211,238,0.6)]" data-delay="300"/>
             </a>
         </div>
 
         <!-- Overlay -->
         <div class="relative min-h-screen bg-black/40">
-            <nav class="sticky top-5 z-50 mx-auto max-w-5xl grid grid-cols-3 items-center px-4 sm:px-6 md:px-8 py-3 gap-3 border border-white/20 backdrop-blur-md rounded-full text-white font-mono text-[12px] lg:text-[13px] xl:text-[14px] animate-floatSlowv2"
+            <nav class="reveal reveal-zoom sticky top-5 z-50 mx-auto max-w-5xl grid grid-cols-3 items-center px-4 sm:px-6 md:px-8 py-3 gap-3 border border-white/20 backdrop-blur-md rounded-full text-white font-mono text-[12px] lg:text-[13px] xl:text-[14px] animate-floatSlowv2"
                 aria-label="Navegación principal">
 
                 <!-- IZQ (texto) -->
@@ -83,10 +83,38 @@
                         <a class="transition hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/70 rounded"
                             href="#Experiencia">Experiencia</a>
                     </li>
-                    <li>
-                        <a class="transition hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/70 rounded"
-                            href="#Proyectos">Proyectos</a>
+                    <li class="relative group">
+                        <!-- Botón principal -->
+                        <a href="#"
+                            class="inline-flex items-center gap-1 transition hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/70 rounded">
+                            Proyectos
+                            <!-- Flecha -->
+                            <svg class="w-3 h-3 transition-transform duration-200 group-hover:rotate-180"
+                                viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+
+                        <!-- Dropdown -->
+                        <ul
+                            class="absolute left-1/2 top-full mt-3 -translate-x-1/2 min-w-38 rounded-xl border border-white/15 bg-black/80 backdrop-blur-xl shadow-xl opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
+
+                            <li>
+                                <a href="pages/dev.html"
+                                    class="block px-4 py-3 text-sm hover:text-cyan-300 rounded-t-2xl transition">
+                                    Desarrollo
+                                </a>
+                            </li>
+                            <li>
+                                <a href="pages/design.html"
+                                    class="block px-4 py-3 text-sm hover:text-cyan-300 rounded-b-2xl transition">
+                                    Diseño
+                                </a>
+                            </li>
+                        </ul>
                     </li>
+
                 </ul>
 
                 <!-- CENTRO (logo) -->
@@ -132,8 +160,22 @@
                     <ul class="grid gap-2 text-sm">
                         <li><a class="block rounded-2xl px-4 py-3 border border-white/10 bg-white/5 hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-cyan-300/70"
                                 href="#Experiencia">Experiencia</a></li>
-                        <li><a class="block rounded-2xl px-4 py-3 border border-white/10 bg-white/5 hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-cyan-300/70"
-                                href="#Proyectos">Proyectos</a></li>
+                        <li class="space-y-1">
+                            <span class="block px-4 pt-3 text-xs uppercase tracking-wider text-white/40">
+                                Proyectos
+                            </span>
+
+                            <a href="pages/dev.html"
+                                class="block rounded-2xl px-4 py-3 border border-white/50 bg-white/0 hover:bg-white/10 transition">
+                                Desarrollo
+                            </a>
+
+                            <a href="pages/design.html"
+                                class="block rounded-2xl px-4 py-3 border border-white/50 bg-white/0 hover:bg-white/10 transition">
+                                Diseño
+                            </a>
+                        </li>
+
                         <li><a class="block rounded-2xl px-4 py-3 border border-white/10 bg-white/5 hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-cyan-300/70"
                                 href="#Conocimientos">Conocimientos</a></li>
                         <li><a class="block rounded-2xl px-4 py-3 border border-white/10 bg-white/5 hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-cyan-300/70"
@@ -163,11 +205,11 @@
     <!-- MAIN -->
     <main id="main" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 flex flex-col gap-16 text-white">
         <!-- HERO: presentación + CTAs -->
-        <section class="w-full" aria-labelledby="hero-title" aria-label="Presentación">
+        <section class="reveal w-full" aria-labelledby="hero-title" aria-label="Presentación">
             <div class="w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-2 items-center">
                     <!-- Columna izquierda: foto + badge disponibilidad -->
-                    <div class="lg:col-span-4 flex flex-col items-center lg:items-start gap-3 pb-4">
+                    <div class="reveal reveal--left lg:col-span-4 flex flex-col items-center lg:items-start gap-3 pb-4" data-delay="50">
                         <!-- Wrapper para mantener el mismo ancho en foto + badge -->
                         <div class="w-40 sm:w-52">
                             <img class="w-full h-40 sm:h-48 rounded-3xl object-cover border border-white/15 shadow-md ring-1 ring-white/10 filter-[drop-shadow(0_0_18px_rgba(34,211,238,0.15))] transition duration-300 hover:scale-[1.02]"
@@ -187,8 +229,8 @@
                     </div>
 
                     <!-- Columna derecha: copy + botones -->
-                    <div class="lg:col-span-8 flex flex-col gap-4">
-                        <h1 id="hero-title" class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
+                    <div class="reveal reveal--right lg:col-span-8 flex flex-col gap-4" data-delay="150">
+                        <h1 id="hero-title" class="reveal text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight" data-delay="300">
                             Hey, soy Guille Redondo
                         </h1>
 
@@ -204,20 +246,21 @@
                         </p>
 
                         <!-- CTAs principales -->
-                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
-                            <a href="mailto:guillerc18@gmail.com"
-                                class="group inline-flex items-center justify-center gap-3 rounded-xl px-5 py-3 bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/25 hover:border-sky-300/40 shadow-sm transition focus:outline-none focus:ring-2 focus:ring-sky-400/40"
-                                aria-label="Enviar email a Guille">
-                                <img class="w-4 h-4 opacity-90 group-hover:opacity-100"
-                                    src="assets/img/logoMailWhite.webp" alt="" aria-hidden="true" />
-                                <span class="text-sm sm:text-base font-semibold">Contáctame</span>
-                            </a>
-
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 w-full">
+                            <div class="relative group">
+                                <a href="#Contacto"
+                                    class="group inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl px-5 py-3 bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/25 hover:border-sky-300/40 shadow-sm transition focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+                                    aria-label="Enviar email a Guille">
+                                    <img class="w-4 h-4 opacity-90 group-hover:opacity-100"
+                                        src="assets/img/logoMailWhite.webp" alt="" aria-hidden="true" />
+                                    <span class="text-sm sm:text-base font-semibold">Contáctame</span>
+                                </a>
+                            </div>
                             <div class="relative group">
                                 <a href="https://www.linkedin.com/in/guillermo-redondo-camacho" target="_blank"
                                     rel="noreferrer"
-                                    class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-3 bg-blue-500/50 hover:bg-blue-500/70 border border-white/15 hover:border-white/25 transition shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-300/40"
-                                    aria-label="Abrir LinkedIn de Guillermo en una nueva pestaña">
+                                    class="inline-flex items-center w-full sm:w-auto justify-center gap-3 rounded-xl px-5 py-3 bg-blue-500/50 hover:bg-blue-500/70 border border-white/15 hover:border-white/25 transition shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-300/40"
+                                    aria-label="Abrir mi Linkedin en una nueva pestaña">
 
                                     <img class="w-5 h-5 opacity-90 group-hover:opacity-100"
                                         src="assets/img/logoLinkedin.PNG" alt="" aria-hidden="true" />
@@ -241,11 +284,9 @@
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="relative group">
                                 <a href="https://www.github.com/guilleodev" target="_blank" rel="noreferrer"
-                                    class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-3 bg-black/10 hover:bg-white/15 border border-white/15 hover:border-white/25 transition shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-300/40"
+                                    class="inline-flex items-center w-full sm:w-auto justify-center gap-3 rounded-xl px-5 py-3 bg-black/10 hover:bg-white/15 border border-white/15 hover:border-white/25 transition shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-300/40"
                                     aria-label="Abrir GitHub de guilleodev en una nueva pestaña">
 
                                     <img class="w-5 h-5 opacity-90 group-hover:opacity-100"
@@ -279,7 +320,7 @@
 
         <!-- EXPERIENCIA -->
         <section id="Experiencia"
-            class="w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
+            class="reveal w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
             aria-labelledby="experience-title">
             <!-- Título de sección -->
             <div class="flex items-center gap-3 mb-8">
@@ -295,7 +336,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <!-- Card: SEB Creativos -->
                 <article
-                    class="rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-7 shadow-sm hover:bg-white/6 transition">
+                    class="reveal rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-7 shadow-sm hover:bg-white/6 transition" data-delay="0">
                     <header class="flex items-start justify-between gap-4">
                         <div class="flex items-start gap-4">
                             <!-- Logo + link empresa -->
@@ -327,7 +368,7 @@
 
                         <!-- Tipo -->
                         <span
-                            class="shrink-0 rounded-full px-3 py-1 text-xs font-medium bg-white/10 border border-white/10 text-white/70">
+                            class="hidden md:flex shrink-0 rounded-full px-3 py-1 text-xs font-medium bg-white/10 border border-white/10 text-white/70">
                             Agencia
                         </span>
                     </header>
@@ -407,7 +448,7 @@
 
                 <!-- Card: ABR -->
                 <article
-                    class="rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-7 shadow-sm hover:bg-white/6 transition">
+                    class="reveal rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-7 shadow-sm hover:bg-white/6 transition" data-delay="200">
                     <header class="flex items-start justify-between gap-4">
                         <div class="flex items-start gap-4">
                             <!-- Logo + link empresa -->
@@ -439,8 +480,8 @@
 
                         <!-- Tipo -->
                         <span
-                            class="shrink-0 rounded-full px-3 py-1 text-xs font-medium bg-white/10 border border-white/10 text-white/70">
-                            Cliente final
+                            class="hidden md:flex shrink-0 rounded-full px-3 py-1 text-xs font-medium bg-white/10 border border-white/10 text-white/70">
+                            Freelance
                         </span>
                     </header>
 
@@ -515,7 +556,7 @@
 
         <!-- PROYECTOS (CATEGORÍAS) -->
         <section id="Proyectos"
-            class="w-full rounded-3xl flex flex-col gap-6 border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
+            class="reveal w-full rounded-3xl flex flex-col gap-6 border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
             aria-labelledby="projects-title">
 
             <!-- Título de sección -->
@@ -529,7 +570,7 @@
             </div>
 
             <p class="text-white/70 text-sm sm:text-base">
-                Explora mis trabajos por categoría: diseño (UI/UX) y desarrollo (front/full-stack).
+                Explora mis trabajos por categorías:
             </p>
 
             <!-- Grid categorías -->
@@ -559,7 +600,7 @@
                             </div>
 
                             <span
-                                class="shrink-0 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-white/10 border border-white/10 text-white/70">
+                                class="hidden md:flex shrink-0 items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-white/10 border border-white/10 text-white/70">
                                 Ver proyectos
                                 <span class="transition-transform group-hover:translate-x-0.5">→</span>
                             </span>
@@ -570,7 +611,7 @@
                             datos.
                         </p>
 
-                        <!-- Logos dev “bonitos” -->
+                        <!-- Logos dev -->
                         <div class="flex flex-wrap items-center gap-3 pt-1" aria-label="Tecnologías de desarrollo">
                             <span
                                 class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs bg-white/10 border border-white/10 text-white/80">
@@ -621,7 +662,7 @@
                             </div>
 
                             <span
-                                class="shrink-0 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-white/10 border border-white/10 text-white/70">
+                                class="hidden md:flex shrink-0 items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-white/10 border border-white/10 text-white/70">
                                 Ver proyectos
                                 <span class="transition-transform group-hover:translate-x-0.5">→</span>
                             </span>
@@ -647,7 +688,7 @@
 
         <!-- CONOCIMIENTOS -->
         <section id="Conocimientos"
-            class="w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
+            class="reveal w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
             aria-labelledby="skills-title">
 
             <!-- Título -->
@@ -836,7 +877,7 @@
 
         <!-- SOBRE MÍ -->
         <section id="SobreMi"
-            class="w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
+            class="reveal w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
             aria-labelledby="about-title">
 
             <!-- Título -->
@@ -892,7 +933,7 @@
 
         <!-- CONTACTO -->
         <section id="Contacto"
-            class="w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
+            class="reveal w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
             aria-labelledby="contact-title">
 
             <!-- Título -->
@@ -967,7 +1008,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="w-full mt-10 rounded-3xl border border-white/10 bg-white/0 backdrop-blur-xl shadow-lg"
+    <footer class="reveal w-full mt-10 rounded-3xl border border-white/10 bg-white/0 backdrop-blur-xl shadow-lg"
         aria-label="Pie de página">
 
         <div class="mx-auto max-w-6xl px-6 sm:px-10 py-10">

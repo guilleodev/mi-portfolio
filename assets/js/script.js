@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
         el.addEventListener("mouseleave", () => cursor.classList.remove("is-pointer"));
       });
 
-      // Click feedback sutil
+      // Click feedback
       document.addEventListener("mousedown", () => {
         cursor.style.transform = "translate(-50%, -50%) scale(0.92)";
       });
@@ -189,9 +189,118 @@ document.addEventListener("DOMContentLoaded", () => {
           behavior: "smooth",
         });
       });
-
-
     }
   }
+
+  /* Efectos scroll - Reveal */
+
+  const items = document.querySelectorAll(".reveal");
+
+  if (!items.length) return;
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        io.unobserve(entry.target); // solo una vez
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -10% 0px",
+    }
+  );
+
+  items.forEach((el) => {
+    // Delay opcional por atributo: data-delay="120"
+    const d = el.getAttribute("data-delay");
+    if (d) el.style.transitionDelay = `${parseInt(d, 10)}ms`;
+
+    io.observe(el);
+  });
+
+  (() => {
+    const items = Array.from(document.querySelectorAll("[data-lightbox]"));
+    if (!items.length) return;
+
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lbImg");
+    const lbCaption = document.getElementById("lbCaption");
+    const btnClose = document.getElementById("lbClose");
+    const btnPrev = document.getElementById("lbPrev");
+    const btnNext = document.getElementById("lbNext");
+
+    let index = 0;
+    let lastFocus = null;
+
+    const open = (i) => {
+      index = i;
+      const el = items[index];
+      const full = el.getAttribute("data-full");
+      const alt = el.getAttribute("data-alt") || el.querySelector("img")?.alt || "Imagen";
+
+      lastFocus = document.activeElement;
+
+      lbImg.src = full;
+      lbImg.alt = alt;
+      lbCaption.textContent = alt;
+
+      lb.classList.remove("hidden");
+      lb.classList.add("flex");
+      lb.setAttribute("aria-hidden", "false");
+
+      // Bloquear scroll body
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+
+      // Foco al botón cerrar
+      btnClose.focus();
+    };
+
+    const close = () => {
+      lb.classList.add("hidden");
+      lb.classList.remove("flex");
+      lb.setAttribute("aria-hidden", "true");
+
+      lbImg.src = "";
+      lbImg.alt = "";
+      lbCaption.textContent = "";
+
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+
+      if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+    };
+
+    const prev = () => open((index - 1 + items.length) % items.length);
+    const next = () => open((index + 1) % items.length);
+
+    items.forEach((btn, i) => {
+      btn.addEventListener("click", () => open(i));
+      btn.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          open(i);
+        }
+      });
+    });
+
+    btnClose.addEventListener("click", close);
+    btnPrev.addEventListener("click", prev);
+    btnNext.addEventListener("click", next);
+
+
+    // Teclado
+    document.addEventListener("keydown", (e) => {
+      if (lb.classList.contains("hidden")) return;
+
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    });
+  })();
+
 });
 
