@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  document.documentElement.classList.add("js");
+
   /* =========================
      Año footer
   ========================== */
@@ -194,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Efectos scroll - Reveal */
 
-  const items = document.querySelectorAll(".reveal");
+  const items = document.querySelectorAll(".reveal[data-reveal]");
 
   if (!items.length) return;
 

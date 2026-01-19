@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="description"
+        content="GuilleODEV · Desarrollador web creativo especializado en frontend, WordPress y diseño UI. Código limpio, diseño moderno y proyectos reales." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PortfolioGuilleODEV</title>
 
@@ -35,16 +37,43 @@
 
         <!-- Capa ambiental del header -->
         <div class="ambient-header border-b border-white/10" aria-hidden="true"></div>
+        <!-- Texto gigante detrás de la persona -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center gap-3
+    z-0 pointer-events-none select-none bottom-90">
 
-        <!-- Vídeo de fondo del hero -->
-        <video id="heroBg" class="absolute inset-0 -z-10 w-full h-full object-cover"
-            src="assets/vid/videoHeaderCompressedx15.mp4" autoplay muted loop playsinline preload="auto"
-            aria-hidden="true"></video>
+            <!-- Nombre -->
+            <span class="font-['Inter'] text-transparent bg-clip-text
+        bg-gradient-to-b from-white/25 via-white/10 to-white/5
+        font-extrabold tracking-tight
+        text-[clamp(3rem,10vw,18rem)]
+        leading-[0.9] uppercase whitespace-nowrap
+        drop-shadow-[0_35px_80px_rgba(0,0,0,0.65)]">
+                Guille Redondo
+            </span>
+
+            <!-- Rol -->
+            <span class="text-white/40 font-medium
+        tracking-[0.3em]
+        text-[clamp(1rem,3vw,4rem)]
+        uppercase whitespace-nowrap
+        drop-shadow-[0_12px_35px_rgba(0,0,0,0.45)]">
+                Fullstack Developer
+            </span>
+        </div>
+
+
+        <!-- Fondo hero: MÓVIL imagen / DESKTOP vídeo -->
+        <img class="absolute inset-0 -z-10 w-full h-full object-cover md:hidden" src="assets/img/headerFondo.png" alt=""
+            aria-hidden="true" loading="eager" decoding="async" />
+
+        <video id="heroBg" class="absolute inset-0 -z-10 w-full h-full object-cover hidden md:block"
+            poster="assets/img/headerFondo.png" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src="assets/vid/videoHeaderF.mp4" type="video/mp4" />
+        </video>
 
         <!-- Escenario 3D: persona + logos flotando (parallax controlado por JS/CSS) -->
-        <div id="heroStage" class="hero-stage hero-person-3d pointer-events-none absolute -left-5 right-0 mx-auto
-      bottom-[30%] sm:bottom-[30%] md:bottom-0
-      w-[clamp(450px,95vw,1500px)] aspect-1500/900">
+        <div id="heroStage" class="hero-stage hero-person-3d pointer-events-none absolute -left-5 right-0 mx-auto bottom-[40%] sm:bottom-[30%] md:bottom-0 w-[clamp(450px,95vw,1500px)] aspect-1500/900">
+
             <div class="reveal reveal--zoom hero-person-wrap absolute inset-0" data-delay="100">
                 <img src="assets/img/sinfondo.png" alt="Persona" draggable="false" class="hero-person absolute inset-0 w-full h-full object-contain select-none
           drop-shadow-[0_40px_60px_rgba(0,0,0,0.6)] brightness-105 contrast-105
@@ -68,13 +97,13 @@
                     class="absolute inset-0 rounded-full bg-cyan-400/30 blur-3xl opacity-70 group-hover:opacity-100 transition"
                     aria-hidden="true"></span>
                 <img src="assets/img/logov2White-transparent.png" alt="Logo (derecha)" class="reveal reveal--right relative w-full h-full object-contain select-none transition duration-300 group-hover:scale-110
-          drop-shadow-[0_0_25px_rgba(34,211,238,0.6)]" data-delay="300"/>
+          drop-shadow-[0_0_25px_rgba(34,211,238,0.6)]" data-delay="300" />
             </a>
         </div>
 
         <!-- Overlay -->
         <div class="relative min-h-screen bg-black/40">
-            <nav class="reveal reveal-zoom sticky top-5 z-50 mx-auto max-w-5xl grid grid-cols-3 items-center px-4 sm:px-6 md:px-8 py-3 gap-3 border border-white/20 backdrop-blur-md rounded-full text-white font-mono text-[12px] lg:text-[13px] xl:text-[14px] animate-floatSlowv2"
+            <nav class="sticky top-5 z-50 mx-auto max-w-5xl grid grid-cols-3 items-center px-4 sm:px-6 md:px-8 py-3 gap-3 border border-white/20 backdrop-blur-md rounded-full text-white font-mono text-[12px] lg:text-[13px] xl:text-[14px] animate-floatSlowv2"
                 aria-label="Navegación principal">
 
                 <!-- IZQ (texto) -->
@@ -186,7 +215,7 @@
         </div>
 
         <!-- Indicador para bajar al contenido -->
-        <div class="absolute inset-x-0 bottom-5 z-50 flex justify-center">
+        <div class="absolute inset-x-0 bottom-20 z-50 flex justify-center">
             <a href="#main" class="flex flex-col items-center opacity-80 hover:opacity-100 transition"
                 aria-label="Bajar al contenido principal">
                 <svg class="w-14 h-14 animate-bounce" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -209,11 +238,12 @@
             <div class="w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-2 items-center">
                     <!-- Columna izquierda: foto + badge disponibilidad -->
-                    <div class="reveal reveal--left lg:col-span-4 flex flex-col items-center lg:items-start gap-3 pb-4" data-delay="50">
-                        <!-- Wrapper para mantener el mismo ancho en foto + badge -->
+                    <div class="reveal reveal--left lg:col-span-4 flex flex-col items-center lg:items-start gap-3 pb-4"
+                        data-delay="50">
+                        <!-- Wrapper -->
                         <div class="w-40 sm:w-52">
                             <img class="w-full h-40 sm:h-48 rounded-3xl object-cover border border-white/15 shadow-md ring-1 ring-white/10 filter-[drop-shadow(0_0_18px_rgba(34,211,238,0.15))] transition duration-300 hover:scale-[1.02]"
-                                src="assets/img/fotoCV2.png" alt="Foto de perfil de Guille" loading="lazy"
+                                src="assets/img/fotoMain.png" alt="Foto de perfil de Guille" loading="lazy"
                                 decoding="async" />
                         </div>
 
@@ -230,7 +260,8 @@
 
                     <!-- Columna derecha: copy + botones -->
                     <div class="reveal reveal--right lg:col-span-8 flex flex-col gap-4" data-delay="150">
-                        <h1 id="hero-title" class="reveal text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight" data-delay="300">
+                        <h1 id="hero-title" class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight"
+                            data-delay="300">
                             Hey, soy Guille Redondo
                         </h1>
 
@@ -321,7 +352,7 @@
         <!-- EXPERIENCIA -->
         <section id="Experiencia"
             class="reveal w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
-            aria-labelledby="experience-title">
+            aria-labelledby="experience-title" data-reveal>
             <!-- Título de sección -->
             <div class="flex items-center gap-3 mb-8">
                 <img src="assets/img/3dicons-travel-dynamic-color.png" alt="" aria-hidden="true"
@@ -336,7 +367,8 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <!-- Card: SEB Creativos -->
                 <article
-                    class="reveal rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-7 shadow-sm hover:bg-white/6 transition" data-delay="0">
+                    class="reveal rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-7 shadow-sm hover:bg-white/6 transition"
+                    data-delay="0" data-reveal>
                     <header class="flex items-start justify-between gap-4">
                         <div class="flex items-start gap-4">
                             <!-- Logo + link empresa -->
@@ -448,7 +480,8 @@
 
                 <!-- Card: ABR -->
                 <article
-                    class="reveal rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-7 shadow-sm hover:bg-white/6 transition" data-delay="200">
+                    class="reveal rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-7 shadow-sm hover:bg-white/6 transition"
+                    data-delay="200" data-reveal>
                     <header class="flex items-start justify-between gap-4">
                         <div class="flex items-start gap-4">
                             <!-- Logo + link empresa -->
@@ -557,7 +590,7 @@
         <!-- PROYECTOS (CATEGORÍAS) -->
         <section id="Proyectos"
             class="reveal w-full rounded-3xl flex flex-col gap-6 border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
-            aria-labelledby="projects-title">
+            aria-labelledby="projects-title" data-reveal>
 
             <!-- Título de sección -->
             <div class="flex items-center gap-3 mb-2">
@@ -689,7 +722,7 @@
         <!-- CONOCIMIENTOS -->
         <section id="Conocimientos"
             class="reveal w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
-            aria-labelledby="skills-title">
+            aria-labelledby="skills-title" data-reveal>
 
             <!-- Título -->
             <div class="flex items-center gap-3 mb-8">
@@ -878,7 +911,7 @@
         <!-- SOBRE MÍ -->
         <section id="SobreMi"
             class="reveal w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
-            aria-labelledby="about-title">
+            aria-labelledby="about-title" data-reveal>
 
             <!-- Título -->
             <div class="flex items-center gap-3 mb-8">
@@ -934,7 +967,7 @@
         <!-- CONTACTO -->
         <section id="Contacto"
             class="reveal w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
-            aria-labelledby="contact-title">
+            aria-labelledby="contact-title" data-reveal>
 
             <!-- Título -->
             <div class="flex items-center gap-3 mb-8">
@@ -1009,7 +1042,7 @@
 
     <!-- FOOTER -->
     <footer class="reveal w-full mt-10 rounded-3xl border border-white/10 bg-white/0 backdrop-blur-xl shadow-lg"
-        aria-label="Pie de página">
+        aria-label="Pie de página" data-reveal>
 
         <div class="mx-auto max-w-6xl px-6 sm:px-10 py-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
@@ -1117,7 +1150,8 @@
         ↑
     </button>
 
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js" defer></script>
+
     <!--
     <script> tailwind.config = { theme: { extend: { keyframes: { float: { "0%, 100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-18px)" } }, floatv2: { "0%, 100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(3px)" } } }, animation: { float: "float 6s ease-in-out infinite", floatSlow: "float 8s ease-in-out infinite", floatSlowv2: "floatv2 5s ease-in-out infinite" } } } } </script>
     <script src="https://cdn.tailwindcss.com"></script> -->
