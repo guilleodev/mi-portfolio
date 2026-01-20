@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   console.log("gsap:", typeof window.gsap !== "undefined");
-console.log("ScrollTrigger:", typeof window.ScrollTrigger !== "undefined");
+  console.log("ScrollTrigger:", typeof window.ScrollTrigger !== "undefined");
 
 
   document.documentElement.classList.add("js");
@@ -182,13 +182,16 @@ console.log("ScrollTrigger:", typeof window.ScrollTrigger !== "undefined");
       ========================== */
       const scrollBtn = document.getElementById("scrollTopBtn");
 
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 400) {
-          scrollBtn.classList.remove("hidden");
-        } else {
-          scrollBtn.classList.add("hidden");
-        }
-      });
+      if (scrollBtn) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 400) scrollBtn.classList.remove("hidden");
+          else scrollBtn.classList.add("hidden");
+        });
+
+        scrollBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
 
       scrollBtn.addEventListener("click", () => {
         window.scrollTo({
@@ -198,6 +201,31 @@ console.log("ScrollTrigger:", typeof window.ScrollTrigger !== "undefined");
       });
     }
   }
+
+  /* =========================
+   Fix: hash en carga (/#Proyectos)
+   ========================== */
+  const jumpToHash = () => {
+    const hash = window.location.hash;
+    if (!hash) return;
+
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: "auto", block: "start" });
+  };
+
+  window.addEventListener("load", () => {
+    if (window.ScrollTrigger) {
+      try { window.ScrollTrigger.refresh(true); } catch (e) { }
+    }
+
+    setTimeout(jumpToHash, 120);
+  });
+
+  window.addEventListener("hashchange", () => {
+    setTimeout(jumpToHash, 60);
+  });
 
 });
 
