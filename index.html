@@ -39,7 +39,7 @@
         <div class="ambient-header border-b border-white/10" aria-hidden="true" data-anim="fade-up" data-delay="80">
         </div>
 
-        <!-- Texto gigante detrás de la persona -->
+        <!-- Texto detrás -->
         <div class="absolute inset-0 flex flex-col items-center justify-center gap-3
     z-0 pointer-events-none select-none bottom-90" data-anim="fade-up" data-delay="150">
 
@@ -53,7 +53,7 @@
                 Guille Redondo
             </span>
 
-            <!-- Rol -->
+            <!-- Título -->
             <span class="text-white/40 font-medium
         tracking-[0.3em]
         text-[clamp(1rem,3vw,4rem)]
@@ -73,7 +73,7 @@
             <source src="assets/vid/videoHeaderF.mp4" type="video/mp4" />
         </video>
 
-        <!-- Escenario 3D: persona + logos flotando -->
+        <!-- Escenario 3D -->
         <div id="heroStage"
             class="hero-stage hero-person-3d pointer-events-none absolute -left-5 right-0 mx-auto bottom-[40%] sm:bottom-[30%] md:bottom-0 w-[clamp(450px,95vw,1500px)] aspect-1500/900"
             data-anim="fade-up" data-delay="180">
@@ -135,14 +135,16 @@
 
                             <li>
                                 <a href="pages/dev.html"
-                                    class="block px-4 py-3 text-sm hover:text-cyan-300 rounded-t-2xl transition">
-                                    Desarrollo
+                                    class="flex flex-row px-4 py-3 text-sm hover:text-cyan-300 rounded-t-2xl transition gap-2">
+                                    <img src="assets/img/3dicons-at-dynamic-color.png" alt="logo Figma" class="w-5">
+                                    <p>Desarrollo</p>
                                 </a>
                             </li>
                             <li>
                                 <a href="pages/design.html"
-                                    class="block px-4 py-3 text-sm hover:text-cyan-300 rounded-b-2xl transition">
-                                    Diseño
+                                    class="flex flex-row px-4 py-3 text-sm hover:text-cyan-300 rounded-t-2xl transition gap-2">
+                                    <img src="assets/img/figma3D.png" alt="logo Figma" class="w-5">
+                                    <p>Diseño</p>
                                 </a>
                             </li>
                         </ul>
@@ -175,12 +177,12 @@
                     <button id="menuBtn"
                         class="inline-flex items-center justify-center rounded-full w-11 h-11 border border-white/15 bg-white/5 hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-cyan-300/70"
                         aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu" type="button">
-                        <!-- icono abrir -->
+                        <!-- abrir -->
                         <svg id="menuIcon" class="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                             <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="2.2"
                                 stroke-linecap="round" />
                         </svg>
-                        <!-- icono cerrar -->
+                        <!-- cerrar -->
                         <svg id="closeIcon" class="w-6 h-6 hidden" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                             <path d="M6 6l12 12M18 6l-12 12" stroke="white" stroke-width="2.2" stroke-linecap="round" />
                         </svg>
@@ -218,7 +220,7 @@
             </nav>
         </div>
 
-        <!-- Indicador para bajar al contenido -->
+        <!-- Bajar -->
         <div class="absolute inset-x-0 bottom-20 z-50 flex justify-center">
             <a href="#main" class="flex flex-col items-center opacity-80 hover:opacity-100 transition"
                 aria-label="Bajar al contenido principal">
@@ -241,7 +243,7 @@
         <section class="w-full" aria-labelledby="hero-title" aria-label="Presentación" data-anim="fade-left">
             <div class="w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-2 items-center">
-                    <!-- Columna izquierda: foto + badge disponibilidad -->
+                    <!-- Columna izquierda -->
                     <div class="lg:col-span-4 flex flex-col items-center lg:items-start gap-3 pb-4">
                         <!-- Wrapper -->
                         <div class="w-40 sm:w-52">
@@ -261,7 +263,7 @@
                         </div>
                     </div>
 
-                    <!-- Columna derecha: copy + botones -->
+                    <!-- Columna derecha -->
                     <div class="lg:col-span-8 flex flex-col gap-4">
                         <h1 id="hero-title" class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
                             Hey, soy Guille Redondo
@@ -278,7 +280,7 @@
                             completas y funcionales.
                         </p>
 
-                        <!-- CTAs principales -->
+                        <!-- CTAs -->
                         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 w-full">
                             <div class="relative group">
                                 <a href="#Contacto"
@@ -355,7 +357,7 @@
         <section id="Experiencia" data-anim="fade-up"
             class="w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
             aria-labelledby="experience-title">
-            <!-- Título de sección -->
+            <!-- Título -->
             <div class="flex items-center gap-3 mb-8">
                 <img src="assets/img/3dicons-travel-dynamic-color.png" alt="" aria-hidden="true"
                     class="w-10 h-10 opacity-90 transition-transform duration-300 hover:-rotate-6 hover:scale-105 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]" />
@@ -559,7 +561,7 @@
                 </article>
             </div>
 
-            <!-- Nota -->
+            <!-- Fuera de IT -->
             <div class="mt-8 rounded-2xl border border-white/10 bg-slate-950/30 p-5 sm:p-6 shadow-sm hover:bg-white/6 transition"
                 data-anim="stagger">
                 <div class="flex items-start gap-3">
@@ -589,7 +591,7 @@
             </div>
         </section>
 
-        <!-- PROYECTOS (CATEGORÍAS) -->
+        <!-- PROYECTOS -->
         <section id="Proyectos"
             class="w-full rounded-3xl flex flex-col gap-6 border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 shadow-lg"
             aria-labelledby="projects-title" data-anim="fade-right">
@@ -737,7 +739,7 @@
                 </h2>
             </div>
 
-            <!-- Grid de tecnologías -->
+            <!-- Grid tecnologías -->
             <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 gap-4 sm:gap-5">
                 <div
                     class="relative group rounded-2xl border border-white/10 bg-slate-950/40 p-3 flex items-center justify-center hover:bg-white/6 transition">

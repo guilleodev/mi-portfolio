@@ -10,6 +10,11 @@
     <!-- Custom styles -->
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
 </head>
 
 <body class="min-h-screen bg-gray-950 text-white font-mono">
@@ -21,7 +26,7 @@
         <header class="mt-6 mb-8">
             <h1 class="reveal text-3xl sm:text-4xl font-semibold tracking-tight" data-delay="100">Diseño web</h1>
             <p class="reveal text-white/70 mt-2 max-w-2xl" data-delay="200">
-                Proyectos de UI/UX y prototipado en Figma.
+                Mis proyectos de UI/UX y prototipado en Figma.
             </p>
         </header>
 
@@ -32,7 +37,7 @@
 
             <!-- Título de sección -->
             <div class="flex items-center gap-3 mb-8">
-                <img src="../assets/img/3dicons-at-dynamic-color.png" alt="" aria-hidden="true"
+                <img src="../assets/img/figma3D.png" alt="" aria-hidden="true"
                     class="reveal w-10 h-10 opacity-90 transition-transform duration-300 hover:-rotate-6 hover:scale-105 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]" />
                 <h2 id="projects-title"
                     class="reveal relative inline-block text-2xl sm:text-3xl font-semibold tracking-tight text-white after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full hover:after:[box-shadow:0_0_8px_rgba(34,211,238,0.6)]">
@@ -42,26 +47,26 @@
 
             <!-- Card: Plantilla - Portfolio Retro -->
             <article
-                class="reveal relative cursor-not-allowed pointer-events-none grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm transition">
-
-                <!-- OVERLAY -->
-                <div class="absolute inset-0 z-20 flex items-center justify-center rounded-2xl bg-black/85 backdrop-blur-sm"
-                    aria-hidden="true">
-
-                    <!-- EN PROCESO -->
-                    <div
-                        class="animate-pulse flex items-center gap-3 rounded-full px-6 py-3 border border-amber-400/40 bg-amber-400/10 text-amber-300 text-sm sm:text-base font-semibold uppercase tracking-widest shadow-[0_0_25px_rgba(251,191,36,0.35)]">
-
-                        <span class="reveal h-2.5 w-2.5 rounded-full bg-amber-300 animate-pulse"></span>
-                        En proceso
-                    </div>
-                </div>
+                class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm transition">
 
                 <!-- PREVIEW -->
                 <div class="lg:col-span-6">
-                    <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20">
-                        <img class="w-full h-80 object-cover" src="../assets/img/capturaPortfolioRetro2.png"
-                            alt="Vista previa del diseño en Figma" loading="lazy" decoding="async" />
+                    <div
+                        class="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20 hover:ease-in-out">
+                        <a href="https://www.figma.com/design/GliMceifAWTj5I7gbxj2q9/PortfolioRetro?node-id=2004-515&t=8qf9VfhrMekME0bY-1"
+                            target="_blank" rel="noopener"
+                            class="group block overflow-hidden rounded-2xl border border-white/10">
+                            <div class="relative">
+                                <img class="w-full h-80 object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                                    src="../assets/img/portfolioRetroCover.png" alt="Vista previa del diseño en Figma"
+                                    loading="lazy" decoding="async" />
+
+                                <!-- Overlay -->
+                                <div
+                                    class="pointer-events-none absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
@@ -80,43 +85,45 @@
                     <!-- Incluye -->
                     <div class="flex flex-wrap gap-2" aria-label="Incluye">
                         <span
-                            class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80">
+                            class="cursor-pointer inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80 hover:bg-cyan-900">
                             <span class="h-2 w-2 rounded-full bg-cyan-300"></span>
-                            Design
+                            Diseño
                         </span>
 
                         <span
-                            class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80">
+                            class="cursor-pointer inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80 hover:bg-cyan-900">
                             <span class="h-2 w-2 rounded-full bg-violet-300"></span>
-                            Guidelines
+                            Guía de estilos
                         </span>
 
                         <span
-                            class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80">
+                            class="cursor-pointer inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80 hover:bg-cyan-900">
                             <span class="h-2 w-2 rounded-full bg-emerald-300"></span>
                             Mockup
                         </span>
                     </div>
 
                     <p class="text-white/80 leading-relaxed text-sm sm:text-base">
-                        Diseño completo en Figma con estructura de pantallas,
-                        sistema de estilos y componentes reutilizables.
-                        Incluye guidelines (tipografía, colores, espaciados)
-                        y mockups finales listos para implementación.
+                        Plantilla demo de portfolio con estética retro, diseñada en Figma. Incluye diseño en versión
+                        escritorio y móvil, una guía de estilos (tipografía, colores e iconos) y mockups finales.
+                        Algunos contenidos son ficticios, mientras que los datos personales utilizados corresponden a mi
+                        propio perfil a modo de ejemplo.
                     </p>
 
                     <!-- Links -->
                     <div class="flex flex-row flex-wrap gap-3">
-                        <a href="https://www.figma.com/file/" target="_blank" rel="noreferrer"
-                            class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-2 bg-white/10 border border-white/15 shadow-sm">
+                        <a href="https://www.figma.com/design/GliMceifAWTj5I7gbxj2q9/PortfolioRetro?node-id=2004-515&t=8qf9VfhrMekME0bY-1"
+                            target="_blank" rel="noreferrer"
+                            class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-2 bg-white/10 border border-white/15 shadow-sm hover:bg-cyan-900">
                             <img class="w-5 h-5" src="../assets/img/logoFigma.png" alt="" aria-hidden="true" />
-                            <span class="font-medium">Figma File</span>
+                            <span class="font-medium">Figma</span>
                         </a>
 
-                        <a href="https://www.figma.com/proto/" target="_blank" rel="noreferrer"
-                            class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-2 bg-sky-500/20 border border-sky-400/25 shadow-sm">
+                        <a href="https://www.figma.com/proto/GliMceifAWTj5I7gbxj2q9/PortfolioRetro?node-id=1-4&t=8ugGaf35S7s4X2k2-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                            target="_blank" rel="noreferrer"
+                            class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-2 bg-sky-500/20 border border-sky-400/25 shadow-sm hover:bg-cyan-900">
                             <img class="w-5 h-5" src="../assets/img/logoWeb.png" alt="" aria-hidden="true" />
-                            <span class="font-medium">Prototype</span>
+                            <span class="font-medium">Prototipo</span>
                         </a>
                     </div>
                 </div>
