@@ -41,32 +41,65 @@
                     class="reveal w-10 h-10 opacity-90 transition-transform duration-300 hover:-rotate-6 hover:scale-105 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]" />
                 <h2 id="projects-title"
                     class="reveal relative inline-block text-2xl sm:text-3xl font-semibold tracking-tight text-white after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full hover:after:[box-shadow:0_0_8px_rgba(34,211,238,0.6)]">
-                    Proyectos
+                    Diseños
                 </h2>
             </div>
 
             <!-- Card: Plantilla - Portfolio Retro -->
-            <article
+            <article data-gallery
                 class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm transition">
 
                 <!-- PREVIEW -->
+                <!-- PREVIEW -->
                 <div class="lg:col-span-6">
-                    <div
-                        class="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20 hover:ease-in-out">
-                        <a href="https://www.figma.com/design/GliMceifAWTj5I7gbxj2q9/PortfolioRetro?node-id=2004-515&t=8qf9VfhrMekME0bY-1"
-                            target="_blank" rel="noopener"
-                            class="group block overflow-hidden rounded-2xl border border-white/10">
-                            <div class="relative">
-                                <img class="w-full h-80 object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                                    src="../assets/img/portfolioRetroCover.png" alt="Vista previa del diseño en Figma"
-                                    loading="lazy" decoding="async" />
+                    <!-- Imagen grande -->
+                    <button type="button"
+                        class="group relative block w-full overflow-hidden rounded-2xl border border-white/10"
+                        data-lightbox-open>
+                        <img class="w-full h-80 object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                            src="../assets/img/portfolioRetroCover.png" alt="Preview Portfolio Retro" loading="lazy"
+                            decoding="async" data-gallery-main />
+                        <div
+                            class="pointer-events-none absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        </div>
+                    </button>
+                    <!-- Miniaturas -->
+                    <div class="mt-3 grid grid-cols-5 gap-2" data-gallery-thumbs>
+                        <button type="button" class="relative overflow-hidden rounded-xl border border-white/10"
+                            data-gallery-thumb data-src="../assets/img/portfolioRetroCover.png" data-alt="Preview 1"
+                            data-active="true">
+                            <img class="h-16 w-full object-cover opacity-90 hover:opacity-100"
+                                src="../assets/img/portfolioRetroCover.png" alt="Preview 1" loading="lazy"
+                                decoding="async" />
+                        </button>
 
-                                <!-- Overlay -->
-                                <div
-                                    class="pointer-events-none absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                                </div>
-                            </div>
-                        </a>
+                        <button type="button" class="relative overflow-hidden rounded-xl border border-white/10"
+                            data-gallery-thumb data-src="../assets/img/portfolioRetro2.png" data-alt="Preview 2">
+                            <img class="h-16 w-full object-cover opacity-90 hover:opacity-100"
+                                src="../assets/img/portfolioRetro2.png" alt="Preview 2" loading="lazy"
+                                decoding="async" />
+                        </button>
+
+                        <button type="button" class="relative overflow-hidden rounded-xl border border-white/10"
+                            data-gallery-thumb data-src="../assets/img/portfolioRetroMobile.png" data-alt="Preview 3">
+                            <img class="h-16 w-full object-cover opacity-90 hover:opacity-100"
+                                src="../assets/img/portfolioRetroMobile.png" alt="Preview 3" loading="lazy"
+                                decoding="async" />
+                        </button>
+
+                        <button type="button" class="relative overflow-hidden rounded-xl border border-white/10"
+                            data-gallery-thumb data-src="../assets/img/portfolioRetroMockup.png" data-alt="Preview 4">
+                            <img class="h-16 w-full object-cover opacity-90 hover:opacity-100"
+                                src="../assets/img/portfolioRetroMockup.png" alt="Preview 4" loading="lazy"
+                                decoding="async" />
+                        </button>
+
+                        <button type="button" class="relative overflow-hidden rounded-xl border border-white/10"
+                            data-gallery-thumb data-src="../assets/img/portfolioRetroMockupImg.png" data-alt="Preview 5">
+                            <img class="h-16 w-full object-cover opacity-90 hover:opacity-100"
+                                src="../assets/img/portfolioRetroMockupImg.png" alt="Preview 5" loading="lazy"
+                                decoding="async" />
+                        </button>
                     </div>
                 </div>
 
@@ -104,10 +137,12 @@
                     </div>
 
                     <p class="text-white/80 leading-relaxed text-sm sm:text-base">
-                        Plantilla demo de portfolio con estética retro, diseñada en Figma. Incluye diseño en versión
-                        escritorio y móvil, una guía de estilos (tipografía, colores e iconos) y mockups finales.
-                        Algunos contenidos son ficticios, mientras que los datos personales utilizados corresponden a mi
-                        propio perfil a modo de ejemplo.
+                        Diseño demo de portfolio con estética retro, diseñada en Figma. Incluye diseño en versión
+                        escritorio y móvil, una guía de estilos y mockups finales. Los contenidos no son reales
+                        (experiencia, proyectos) pero los datos personales utilizados
+                        corresponden a mi propio perfil a modo de ejemplo. Se trata de un caso de estudio de diseño, sin
+                        desarrollo web
+                        real.
                     </p>
 
                     <!-- Links -->
@@ -129,7 +164,129 @@
                 </div>
             </article>
 
-            <!-- Card: Plantilla - Portfolio Modern -->
+            <!-- Card: Diseño - Portfolio IA -->
+            <article data-gallery
+                class="reveal relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm transition">
+
+                <!-- PREVIEW -->
+                <div class="lg:col-span-6">
+                    <!-- Imagen grande -->
+                    <button type="button"
+                        class="group relative block w-full overflow-hidden rounded-2xl border border-white/10"
+                        data-lightbox-open>
+                        <img class="w-full h-80 object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                            src="../assets/img/portfolioIAcover.png" alt="Preview Portfolio Retro" loading="lazy"
+                            decoding="async" data-gallery-main />
+                        <div
+                            class="pointer-events-none absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        </div>
+                    </button>
+                    <!-- Miniaturas -->
+                    <div class="mt-3 grid grid-cols-5 gap-2" data-gallery-thumbs>
+                        <button type="button" class="relative overflow-hidden rounded-xl border border-white/10"
+                            data-gallery-thumb data-src="../assets/img/portfolioIAcover.png" data-alt="Preview 1"
+                            data-active="true">
+                            <img class="h-16 w-full object-cover opacity-90 hover:opacity-100"
+                                src="../assets/img/portfolioIAcover.png" alt="Preview 1" loading="lazy"
+                                decoding="async" />
+                        </button>
+
+                        <button type="button" class="relative overflow-hidden rounded-xl border border-white/10"
+                            data-gallery-thumb data-src="../assets/img/portfolioIA.png" data-alt="Preview 2">
+                            <img class="h-16 w-full object-cover opacity-90 hover:opacity-100"
+                                src="../assets/img/portfolioIA.png" alt="Preview 2" loading="lazy" decoding="async" />
+                        </button>
+
+                        <button type="button" class="relative overflow-hidden rounded-xl border border-white/10"
+                            data-gallery-thumb data-src="../assets/img/portfolioIAWhite.png" data-alt="Preview 3">
+                            <img class="h-16 w-full object-cover opacity-90 hover:opacity-100"
+                                src="../assets/img/portfolioIAWhite.png" alt="Preview 3" loading="lazy"
+                                decoding="async" />
+                        </button>
+
+                        <button type="button" class="relative overflow-hidden rounded-xl border border-white/10"
+                            data-gallery-thumb data-src="../assets/img/portfolioIAMobile.png" data-alt="Preview 4">
+                            <img class="h-16 w-full object-cover opacity-90 hover:opacity-100"
+                                src="../assets/img/portfolioIAMobile.png" alt="Preview 4" loading="lazy"
+                                decoding="async" />
+                        </button>
+
+                        <button type="button" class="relative overflow-hidden rounded-xl border border-white/10"
+                            data-gallery-thumb data-src="../assets/img/portfolioIAMockup.png" data-alt="Preview 5">
+                            <img class="h-16 w-full object-cover opacity-90 hover:opacity-100"
+                                src="../assets/img/portfolioIAMockup.png" alt="Preview 5" loading="lazy"
+                                decoding="async" />
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CONTENT -->
+                <div class="lg:col-span-6 flex flex-col gap-5">
+
+                    <header>
+                        <h3 class="text-2xl sm:text-3xl font-semibold">
+                            Portfolio IA
+                        </h3>
+                        <p class="text-white/60 mt-1">
+                            UI / UX · Diseño de interfaz
+                        </p>
+                    </header>
+
+                    <!-- Incluye -->
+                    <div class="flex flex-wrap gap-2" aria-label="Incluye">
+                        <span
+                            class="cursor-pointer inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80 hover:bg-cyan-900">
+                            <span class="h-2 w-2 rounded-full bg-cyan-300"></span>
+                            Diseño
+                        </span>
+
+                        <span
+                            class="cursor-pointer inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80 hover:bg-cyan-900">
+                            <span class="h-2 w-2 rounded-full bg-violet-300"></span>
+                            Guía de estilos
+                        </span>
+
+                        <span
+                            class="cursor-pointer inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80 hover:bg-cyan-900">
+                            <span class="h-2 w-2 rounded-full bg-emerald-300"></span>
+                            Mockup
+                        </span>
+
+                        <span
+                            class="cursor-pointer inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80 hover:bg-cyan-900">
+                            <span class="h-2 w-2 rounded-full bg-white"></span>
+                            Dark/Light
+                        </span>
+                    </div>
+
+                    <p class="text-white/80 leading-relaxed text-sm sm:text-base">
+                        Diseño demo de portfolio con IA realizado en Figma como proyecto final de un curso de
+                        inteligencia artificial.
+
+                        Los contenidos son reales pero no representan mi portfolio actual, ya que el proyecto fue creado
+                        en diciembre y desde entonces he ampliado mis conocimientos y trabajos.
+
+                        Se trata de un caso de estudio de diseño, sin desarrollo web real.
+                    </p>
+
+                    <!-- Links -->
+                    <div class="flex flex-row flex-wrap gap-3">
+                        <a href="" target="_blank" rel="noreferrer"
+                            class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-2 bg-white/10 border border-white/15 shadow-sm hover:bg-cyan-900">
+                            <img class="w-5 h-5" src="../assets/img/logoFigma.png" alt="" aria-hidden="true" />
+                            <span class="font-medium">Figma</span>
+                        </a>
+
+                        <a href="" target="_blank" rel="noreferrer"
+                            class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-2 bg-sky-500/20 border border-sky-400/25 shadow-sm hover:bg-cyan-900">
+                            <img class="w-5 h-5" src="../assets/img/logoWeb.png" alt="" aria-hidden="true" />
+                            <span class="font-medium">Prototipo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card: Diseño - Portfolio Modern -->
             <article
                 class="reveal relative cursor-not-allowed pointer-events-none grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm transition">
 
@@ -160,84 +317,6 @@
                     <header>
                         <h3 class="text-2xl sm:text-3xl font-semibold">
                             Portfolio Modern
-                        </h3>
-                        <p class="text-white/60 mt-1">
-                            UI / UX · Diseño de interfaz
-                        </p>
-                    </header>
-
-                    <!-- Incluye -->
-                    <div class="flex flex-wrap gap-2" aria-label="Incluye">
-                        <span
-                            class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80">
-                            <span class="h-2 w-2 rounded-full bg-sky-300"></span>
-                            Diseño
-                        </span>
-
-                        <span
-                            class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80">
-                            <span class="h-2 w-2 rounded-full bg-violet-300"></span>
-                            Guía de estilos
-                        </span>
-
-                        <span
-                            class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm bg-white/10 border border-white/10 text-white/80">
-                            <span class="h-2 w-2 rounded-full bg-emerald-300"></span>
-                            Mockup
-                        </span>
-                    </div>
-
-                    <p class="text-white/80 leading-relaxed text-sm sm:text-base">
-                        En desarrollo...
-                    </p>
-
-                    <!-- Links -->
-                    <div class="flex flex-row flex-wrap gap-3">
-                        <a href="https://www.figma.com/file/" target="_blank" rel="noreferrer"
-                            class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-2 bg-white/10 border border-white/15 shadow-sm">
-                            <img class="w-5 h-5" src="../assets/img/logoFigma.png" alt="" aria-hidden="true" />
-                            <span class="font-medium">Figma</span>
-                        </a>
-
-                        <a href="https://www.figma.com/proto/" target="_blank" rel="noreferrer"
-                            class="inline-flex items-center justify-center gap-3 rounded-xl px-5 py-2 bg-sky-500/20 border border-sky-400/25 shadow-sm">
-                            <img class="w-5 h-5" src="../assets/img/logoWeb.png" alt="" aria-hidden="true" />
-                            <span class="font-medium">Prototipo</span>
-                        </a>
-                    </div>
-                </div>
-            </article>
-            <!-- Card: Plantilla - Portfolio Modern -->
-            <article
-                class="reveal relative cursor-not-allowed pointer-events-none grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-2xl border border-white/10 bg-slate-950/40 p-6 sm:p-8 shadow-sm transition">
-
-                <!-- OVERLAY -->
-                <div class="absolute inset-0 z-20 flex items-center justify-center rounded-2xl bg-black/85 backdrop-blur-sm"
-                    aria-hidden="true">
-
-                    <!-- EN PROCESO -->
-                    <div
-                        class="animate-pulse flex items-center gap-3 rounded-full px-6 py-3 border border-amber-400/40 bg-amber-400/10 text-amber-300 text-sm sm:text-base font-semibold uppercase tracking-widest shadow-[0_0_25px_rgba(251,191,36,0.35)]">
-
-                        <span class="h-2.5 w-2.5 rounded-full bg-amber-300 animate-pulse"></span>
-                        En proceso
-                    </div>
-                </div>
-
-                <!-- PREVIEW -->
-                <div class="lg:col-span-6">
-                    <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20">
-                        <img class="w-full h-80 object-cover" src="../assets/img/pIA.png"
-                            alt="Vista previa del Portfolio Modern" loading="lazy" decoding="async" />
-                    </div>
-                </div>
-
-                <!-- CONTENT -->
-                <div class="lg:col-span-6 flex flex-col gap-5">
-
-                    <header>
-                        <h3 class="text-2xl sm:text-3xl font-semibold">
-                            Portfolio IA
                         </h3>
                         <p class="text-white/60 mt-1">
                             UI / UX · Diseño de interfaz
@@ -386,6 +465,20 @@
             </div>
         </div>
     </footer>
+    <!-- Lightbox galería -->
+    <div class="fixed inset-0 z-[999] hidden items-center justify-center bg-black/80 p-4" data-lightbox>
+        <button type="button" class="absolute inset-0 cursor-zoom-out" aria-label="Cerrar" data-lightbox-close></button>
+
+        <div class="relative z-10 max-w-5xl w-full">
+            <img class="w-full max-h-[80vh] object-contain rounded-2xl border border-white/10" src="" alt=""
+                data-lightbox-img />
+            <button type="button"
+                class="absolute -top-3 -right-3 rounded-full bg-white/10 border border-white/15 px-3 py-2 hover:bg-white/20"
+                data-lightbox-close aria-label="Cerrar">
+                ✕
+            </button>
+        </div>
+    </div>
     <script src="../assets/js/script.js"></script>
 </body>
 

@@ -227,5 +227,84 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(jumpToHash, 60);
   });
 
+  /* =========================
+   Galerías + Lightbox (multi)
+========================== */
+
+  // Lightbox único (global)
+  const lightbox = document.querySelector("[data-lightbox]");
+  const lbImg = document.querySelector("[data-lightbox-img]");
+  const closeBtns = document.querySelectorAll("[data-lightbox-close]");
+
+  const openLightboxWith = (src, alt) => {
+    if (!lightbox || !lbImg) return;
+    lbImg.src = src;
+    lbImg.alt = alt || "Imagen ampliada";
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+    document.documentElement.style.overflow = "hidden";
+  };
+
+  const closeLightbox = () => {
+    if (!lightbox || !lbImg) return;
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+    lbImg.src = "";
+    document.documentElement.style.overflow = "";
+  };
+
+  closeBtns.forEach((b) => b.addEventListener("click", closeLightbox));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+  });
+
+  // Inicializar CADA galería
+  document.querySelectorAll("[data-gallery]").forEach((gallery) => {
+    const mainImg = gallery.querySelector("[data-gallery-main]");
+    const thumbsWrap = gallery.querySelector("[data-gallery-thumbs]");
+    const thumbBtns = gallery.querySelectorAll("[data-gallery-thumb]");
+    const openBtn = gallery.querySelector("[data-lightbox-open]");
+
+    if (!mainImg || !thumbsWrap || !thumbBtns.length) return;
+
+    const setActiveThumb = (btn) => {
+      thumbBtns.forEach((b) => {
+        b.classList.remove("ring-2", "ring-cyan-300", "ring-offset-2", "ring-offset-black");
+        b.removeAttribute("data-active");
+      });
+      btn.classList.add("ring-2", "ring-cyan-300", "ring-offset-2", "ring-offset-black");
+      btn.setAttribute("data-active", "true");
+    };
+
+    const initial =
+      [...thumbBtns].find((b) => b.getAttribute("data-active") === "true") || thumbBtns[0];
+
+    setActiveThumb(initial);
+
+    // Cambiar imagen al clicar miniatura
+    thumbsWrap.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-gallery-thumb]");
+      if (!btn) return;
+
+      const src = btn.getAttribute("data-src");
+      const alt = btn.getAttribute("data-alt") || "Imagen de galería";
+      if (!src) return;
+
+      mainImg.src = src;
+      mainImg.alt = alt;
+      setActiveThumb(btn);
+    });
+
+    // Abrir lightbox de ESTA galería
+    if (openBtn) {
+      openBtn.addEventListener("click", () => {
+        openLightboxWith(mainImg.src, mainImg.alt);
+      });
+    }
+  });
+
+
+
+
 });
 
